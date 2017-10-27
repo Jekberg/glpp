@@ -1,10 +1,12 @@
 /**
- *
+ * File:    glpp.hpp
+ * Author:  John Berg
+ * Date:    27/10/2017
  */
 
-#ifdef GLPP_HPP
+#ifndef GLPP_HPP
 #deifne GLPP_HPP
 
+#include "../../src/list/list.h"
 
-
-#endif //GLPP_JPP
+#endif //GLPP_HPP
