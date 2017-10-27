@@ -1,11 +1,12 @@
 /* 
- * File:    list.h
- * Author:  John
- * Date:    27/10/2017
+ * File:   list.hpp
+ * Author: John
+ *
+ * Created on 27 October 2017, 15:11
  */
 
-#ifndef LIST_H
-#define LIST_H
+#ifndef LIST_HPP
+#define LIST_HPP
 
 #include <GL/gl.h>
 
@@ -45,4 +46,4 @@ namespace glpp
     void submit(const gl_list &) noexcept;
 } //glpp;
 
-#endif //LIST_H
+#endif //LIST_HPP
