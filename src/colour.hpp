@@ -4,10 +4,9 @@
  * Date:    27/10/2017
  */
 
-#ifndef COLOUR_HPP
-#define COLOUR_HPP
+#ifndef GLPP_COLOUR_HPP
+#define GLPP_COLOUR_HPP
 
+#include "colour/colour.hpp"
 
-
-#endif //COLOUR_HPP
-
+#endif //GLPP_COLOUR_HPP

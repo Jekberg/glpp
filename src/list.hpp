@@ -7,6 +7,6 @@
 #ifndef GLPP_LIST_HPP
 #define GLPP_LIST_HPP
 
+#include "list/list.hpp"
 
-
-#endif //LIST_HPP
+#endif //GLPP_LIST_HPP
