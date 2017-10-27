@@ -5,8 +5,11 @@
  */
 
 #ifndef GLPP_HPP
-#deifne GLPP_HPP
+#define GLPP_HPP
 
-#include "../../src/list/list.h"
+#include "../../src/list.hpp"
+#include "../../src/camera.hpp"
+#include "../../src/colour.hpp"
+#include "../../src/vertex.hpp"
 
 #endif //GLPP_HPP
