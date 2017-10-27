@@ -1,4 +1,4 @@
-#include "../gl_list.h"
+#include "../list.h"
 
 namespace glpp
 {
