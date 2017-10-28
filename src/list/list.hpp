@@ -8,6 +8,7 @@
 #ifndef LIST_HPP
 #define LIST_HPP
 
+#include <functional>
 #include <GL/gl.h>
 
 namespace glpp
