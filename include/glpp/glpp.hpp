@@ -11,5 +11,7 @@
 #include "../../src/camera.hpp"
 #include "../../src/colour.hpp"
 #include "../../src/vertex.hpp"
+#include "../../src/stack.hpp"
+#include "../../src/error.hpp"
 
 #endif //GLPP_HPP

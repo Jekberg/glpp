@@ -2,8 +2,10 @@
 
 namespace glpp
 {
+    //==========================================================================
+    //Constructors.
     /**
-     * 
+     * Initialise a vertex
      * 
      * 
      * @param x The x position.
@@ -49,6 +51,8 @@ namespace glpp
                     orig.w_)
     {
     }
+    //==========================================================================
+    //Destructors.
     /**
      * 
      */
@@ -56,6 +60,13 @@ namespace glpp
             noexcept
     {
     }
+    //==========================================================================
+    //Operators.
+    /**
+     * 
+     * @param orig
+     * @return 
+     */
     vertex & vertex::operator = (const vertex & orig)
             noexcept
     {
@@ -65,6 +76,11 @@ namespace glpp
         w_ = orig.w_;
         return *this;
     }
+    /**
+     * 
+     * @param orig
+     * @return 
+     */
     vertex & vertex::operator = (const vertex && orig)
             noexcept
     {
@@ -74,16 +90,30 @@ namespace glpp
         w_ = orig.w_;
         return *this;
     }
+    /**
+     * Get the raw pointer which is pointing at the first element of the vertex,
+     * which represents the x axis.
+     * 
+     * 
+     * 
+     * @return The pointer to the array of the elements.
+     */
     vertex::value_type_ptr vertex::operator * ()
             noexcept
     {
         return &x_;
     }
+    /**
+     * 
+     * @return 
+     */
     vertex::const_value_type_ptr vertex::operator * () const
             noexcept
     {
         return &x_;
     }
+    //==========================================================================
+    //Functions.
     /**
      * 
      * @param vert
@@ -93,8 +123,9 @@ namespace glpp
         glVertex4d(vert.x_, vert.y_, vert.z_, vert.z_);
     }
     /**
+     * Submit the vertex of 
      * 
-     * @param vert
+     * @param vert The rvalue refference to a vertex.
      */
     void submit(const vertex && vert) noexcept
     {

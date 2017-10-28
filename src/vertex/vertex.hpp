@@ -29,8 +29,8 @@ namespace glpp
         vertex(
                 const_value_type,
                 const_value_type,
-                const_value_type,
-                const_value_type)
+                const_value_type = 1.0,
+                const_value_type = 1.0)
                 noexcept;
         ~vertex() noexcept;
         vertex(const vertex &) noexcept;
