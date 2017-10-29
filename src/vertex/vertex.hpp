@@ -24,7 +24,8 @@ namespace glpp
     //==========================================================================
     //Classes.
     /**
-     * The <code>glpp::gl_vertex</code> class is
+     * The <code>glpp::gl_vertex</code> class is a lightweight abstraction of
+     * the vertices used by OpenGL.
      */
     class gl_vertex
     {
