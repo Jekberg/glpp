@@ -42,9 +42,9 @@ namespace glpp
      */
     class error: std::exception
     {
-    private:
         //======================================================================
-        //Fields.
+        //Members.
+    private:
         /**
          * The <code>error_code</code> which was raised.
          */
