@@ -114,7 +114,13 @@ namespace glpp
                 const_value_type y,
                 const_value_type z = 1.0,
                 const_value_type w = 1.0)
-                noexcept;
+                noexcept:
+                x_(x),
+                y_(y),
+                z_(z),
+                w_(w)
+        {
+        }
         /**
          * Copy constructor.
          * 
