@@ -2,7 +2,7 @@
 
 namespace glpp
 {
-    void matrix_space(const procedure callback)
+    void matrix_space(procedure callback)
             noexcept
     {
         glPushMatrix();

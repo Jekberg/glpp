@@ -10,11 +10,11 @@
 
 #include <GL/gl.h>
 #include <functional>
+#include "../util.hpp"
 
 namespace glpp
 {
-    typedef std::function<void ()> procedure;
-    void matrix_space(const procedure) noexcept;
+    void matrix_space(procedure callback) noexcept;
 } //glpp
 
 #endif //MATRIX_HPP
