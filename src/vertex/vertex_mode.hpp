@@ -10,28 +10,32 @@
 
 #include <functional>
 #include <GL/gl.h>
+#include "../error.hpp"
 
 namespace glpp
 {
+    enum class vertex_mode: GLenum
+    {
+        POLYGON = GL_POLYGON
+    };
     /**
      * 
-     * @param type
-     * @param call_back
+     * @param mode
+     * @param callback
      */
-   inline void vertex_mode(
-           const GLenum type,
+   inline void vertex_space(
+           const vertex_mode mode,
            const std::function<void ()> callback)
-           throw(GLenum)
+           throw(error)
    {
-       glBegin(type); //begin
+       glBegin((GLenum) mode); //begin
        {
            //procedure
            callback();
        }
        glEnd(); //end
-       GLenum error = glGetError();
-       if(error)
-           throw error;
+       get_error();
+       
    } //vertex_mode(const auto)
 } //glpp
 #endif //VERTEX_MODE_HPP
