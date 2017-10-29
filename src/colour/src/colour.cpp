@@ -3,31 +3,45 @@
 namespace glpp
 {
     //==========================================================================
-    //Static members.
-    rgba_colour rgba_colour::RED      = rgba_colour(0xFF,   0x0,    0x0);
-    rgba_colour rgba_colour::GREEN    = rgba_colour(0x0,    0xFF,   0x0);
-    rgba_colour rgba_colour::BLUE     = rgba_colour(0x0,    0x0,    0xFF);
-    rgba_colour rgba_colour::BLACK    = rgba_colour(0xFF,   0xFF,   0xFF);
-    rgba_colour rgba_colour::WHITE    = rgba_colour(0x0,    0x0,    0x0);
-    rgba_colour rgba_colour::CYAN     = rgba_colour(0x0,    0xFF,   0xFF);
-    rgba_colour rgba_colour::PURPLE   = rgba_colour(0xFF,   0x0,    0xFF);
-    rgba_colour rgba_colour::YELLOW   = rgba_colour(0xFF,   0xFF,   0x0);
+    //Static fields.
+    rgba_colour rgba_colour::RED      = {0xFF, 0x0, 0x0};
+    rgba_colour rgba_colour::GREEN    = {0x0, 0xFF, 0x0};
+    rgba_colour rgba_colour::BLUE     = {0x0, 0x0, 0xFF};
+    rgba_colour rgba_colour::BLACK    = {0xFF, 0xFF, 0xFF};
+    rgba_colour rgba_colour::WHITE    = {0x0, 0x0, 0x0};
+    rgba_colour rgba_colour::CYAN     = {0x0, 0xFF, 0xFF};
+    rgba_colour rgba_colour::PURPLE   = {0xFF, 0x0, 0xFF};
+    rgba_colour rgba_colour::YELLOW   = {0xFF, 0xFF, 0x0};
     //==========================================================================
     //Constructors.
-    rgba_colour::rgba_colour(
-            const rgba_colour::value_type red,
-            const rgba_colour::value_type green,
-            const rgba_colour::value_type blue,
-            const rgba_colour::value_type alpha)
+    constexpr rgba_colour::rgba_colour(
+            const rgba_colour::value_type r,
+            const rgba_colour::value_type g,
+            const rgba_colour::value_type b)
             noexcept:
-            red_(red),
-            green_(green),
-            blue_(blue),
-            alpha_(alpha)
+            rgba_colour::rgba_colour(r, g, b, 0xFF)
+    {
+    }
+    constexpr rgba_colour::rgba_colour(
+            const rgba_colour::value_type r,
+            const rgba_colour::value_type g,
+            const rgba_colour::value_type b,
+            const rgba_colour::value_type a)
+            noexcept:
+            r(r),
+            b(b),
+            g(g),
+            a(a)
     {
     }
     //==========================================================================
-    rgba_colour::~rgba_colour()
+    //Functions.
+    void submit(const rgba_colour & c) noexcept
     {
-    }
+        glColor4ub(c.r, c.g, c.b, c.a);
+    } //submit(const colour &&) noexcept
+    void submit(const rgba_colour && c) noexcept
+    {
+        glColor4ub(c.r, c.g, c.b, c.a);
+    } //submit(const colour &&) noexcept
 } //glpp

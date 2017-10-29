@@ -13,8 +13,6 @@
 
 namespace glpp
 {
-    //==========================================================================
-    //Enums.
     /**
      * The error codes which can be raised by OpenGL.
      * 
@@ -32,7 +30,7 @@ namespace glpp
         OUT_OF_MEMORY           = GL_OUT_OF_MEMORY
     };
     //==========================================================================
-    //Classes.
+    //Classes and structs.
     /**
      * The <code>glpp::error</code> is a wrapper class for the
      * <code>glpp::error_code</code>.
@@ -46,13 +44,15 @@ namespace glpp
     {
     private:
         //======================================================================
-        //Members.
+        //Fields.
         /**
          * The <code>error_code</code> which was raised.
          */
         error_code code_;
     public:
         //======================================================================
+        //Constructors and destructors.
+        //----------------------------------------------------------------------
         //Constructors.
         /**
          * Deleted.
@@ -92,7 +92,7 @@ namespace glpp
          *          <code>glpp::error</code> object to be moved.
          */
         error(const error && orig) noexcept;
-        //======================================================================
+        //----------------------------------------------------------------------
         //Destructors.
         /**
          * Destroy the error.
