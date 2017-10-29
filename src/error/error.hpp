@@ -49,11 +49,9 @@ namespace glpp
          * The <code>error_code</code> which was raised.
          */
         error_code code_;
-    public:
         //======================================================================
-        //Constructors and destructors.
-        //----------------------------------------------------------------------
         //Constructors.
+    public:
         /**
          * Deleted.
          */
@@ -92,7 +90,7 @@ namespace glpp
          *          <code>glpp::error</code> object to be moved.
          */
         error(const error && orig) noexcept;
-        //----------------------------------------------------------------------
+        //======================================================================
         //Destructors.
         /**
          * Destroy the error.
