@@ -13,5 +13,6 @@
 #include "../../src/vertex.hpp"
 #include "../../src/stack.hpp"
 #include "../../src/error.hpp"
+#include "../../src/config.hpp"
 
 #endif //GLPP_HPP

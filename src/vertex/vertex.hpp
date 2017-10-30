@@ -112,7 +112,7 @@ namespace glpp
         constexpr gl_vertex(
                 const_value_type x,
                 const_value_type y,
-                const_value_type z = 1.0,
+                const_value_type z = 0.0,
                 const_value_type w = 1.0)
                 noexcept:
                 x_(x),
@@ -267,7 +267,10 @@ namespace glpp
      */
     inline void submit(const gl_vertex & vert) noexcept
     {
-        glVertex4d(vert.x_, vert.y_, vert.z_, vert.z_);
+        glVertex3d(
+                vert.x_/vert.w_,
+                vert.y_/vert.w_,
+                vert.z_/vert.w_);
     }
     /**
      * Submit a <code>glpp::gl_vertex</code> to OpenGL.
@@ -276,7 +279,10 @@ namespace glpp
      */
     inline void submit(const gl_vertex && vert) noexcept
     {
-        glVertex4d(vert.x_, vert.y_, vert.z_, vert.z_);
+        glVertex3d(
+                vert.x_/vert.w_,
+                vert.y_/vert.w_,
+                vert.z_/vert.w_);
     }
 } //glpp
 #endif //VERTEX_HPP
