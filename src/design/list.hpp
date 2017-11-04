@@ -9,7 +9,6 @@
 
 #include <functional>
 #include <GL/gl.h>
-#include "../error.hpp"
 #include "../util.hpp"
 
 namespace glpp
@@ -123,8 +122,8 @@ namespace glpp
          * 
          * Move a <code>glpp::gl_list</code> into <code>this</code>.
          * 
-         * @param orig The rvalue reference to the gl_list object to be moved into
-         *      this object.
+         * @param orig The rvalue reference to the gl_list object to be moved
+         *      into this object.
          * @return The reference to this object after the move.
          */
         gl_list & operator = (gl_list && orig) noexcept;
