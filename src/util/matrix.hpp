@@ -10,7 +10,7 @@
 
 #include <GL/gl.h>
 #include <functional>
-#include "../util.hpp"
+#include "types.hpp"
 
 namespace glpp
 {

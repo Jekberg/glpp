@@ -8,29 +8,32 @@
 #define ATTRIBUTE_HPP
 
 #include <GL/gl.h>
-#include "../error.hpp"
-#include "../util.hpp"
+#include "types.hpp"
+#include "error.hpp"
 
 namespace glpp
 {
-    /**
-     * 
-     * @param   attributes
-     * @param   callback
-     * @throws  glpp::error 
-     */
-    void attribute_space(
-            GLbitfield attributes,
-            procedure callback)
-            throw(error)
-    {
-        glPushAttrib(attributes);
-        {
-            callback();
-        }
-        glPopAttrib();
-        get_error();
-    }
+    //==========================================================================
+    //Functions.
+    //Multiple definitions?
+//    /**
+//     * 
+//     * @param   attributes
+//     * @param   callback
+//     * @throws  glpp::error 
+//     */
+//    void attribute_space(
+//            GLbitfield attributes,
+//            procedure callback)
+//            throw(error)
+//    {
+//        glPushAttrib(attributes);
+//        {
+//            callback();
+//        }
+//        glPopAttrib();
+//        get_error();
+//    }
 } //glpp
 
 #endif //ATTRIBUTE_HPP

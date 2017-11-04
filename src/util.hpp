@@ -10,7 +10,8 @@
 #include "util/attribute.hpp"
 #include "util/error.hpp"
 #include "util/matrix.hpp"
-#include "util/procedure.hpp"
+#include "util/types.hpp"
+#include "util/vertex_mode.hpp"
 
 #endif //GLPP_UTIL_HPP
 

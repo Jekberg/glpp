@@ -10,7 +10,7 @@
 
 #include <functional>
 #include <GL/gl.h>
-#include "../error.hpp"
+#include "error.hpp"
 
 namespace glpp
 {

@@ -8,7 +8,7 @@
 #define CAPABILITY_HPP
 
 #include <GL/gl.h>
-#include "../error.hpp"
+#include "../util.hpp"
 
 namespace glpp
 {
