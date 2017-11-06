@@ -27,7 +27,7 @@ namespace glpp
      * The <code>glpp::gl_vertex</code> class is a lightweight abstraction of
      * the vertices used by OpenGL.
      */
-    class gl_vertex
+    class gl_vertex final
     {
     private:
         //======================================================================
@@ -35,7 +35,7 @@ namespace glpp
         /**
          * The type of value which is used by <code>glpp::gl_vertex</code>.
          */
-        typedef double value_type;
+        typedef float value_type;
         /**
          * The const <code>value_type</code>.
          */
@@ -267,7 +267,7 @@ namespace glpp
      */
     inline void submit(const gl_vertex & vert) noexcept
     {
-        glVertex3d(
+        glVertex3f(
                 vert.x_/vert.w_,
                 vert.y_/vert.w_,
                 vert.z_/vert.w_);
@@ -279,7 +279,7 @@ namespace glpp
      */
     inline void submit(const gl_vertex && vert) noexcept
     {
-        glVertex3d(
+        glVertex3f(
                 vert.x_/vert.w_,
                 vert.y_/vert.w_,
                 vert.z_/vert.w_);

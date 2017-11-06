@@ -3,7 +3,7 @@
 namespace glpp
 {
     const unsigned int gl_vertex::LENGTH = 4;
-    const std::string gl_vertex::OUT_OF_RANGE_MESSAGE = "";
+    const std::string gl_vertex::OUT_OF_RANGE_MESSAGE = "Index out of bounds.";
     //==========================================================================
     //Constructors.
     gl_vertex::gl_vertex(const gl_vertex & orig)
