@@ -1,4 +1,4 @@
-/* 
+/*
  * File:    list.hpp
  * Author:  John Berg
  * Date:    27/10/2017
@@ -73,7 +73,7 @@ namespace glpp
         /**
          * Create a <code>glpp::list</code> using a specific compilation mode,
          * and a procedure with the details of the list.
-         * 
+         *
          * @param mode The compilation mode.
          * @param callback The procedure with the details of the list.
          * @throws glpp::error If OpenGL raises an error.
@@ -89,13 +89,13 @@ namespace glpp
         gl_list(const gl_list &) = delete;
         /**
          * Move constructor.
-         * 
+         *
          * <p>
          * Move the <list of a temporary <code>glpp::gl_list</code> into a
          * <code>glpp::gl_list</code> by taking the list of the temporary
          * <code>glpp::gl_list</code>.
          * </p>
-         * 
+         *
          * @param orig The rvalue reference to the <code>glpp::gl_list</code>
          *          to be moved.
          */
@@ -104,7 +104,7 @@ namespace glpp
         //Destructors.
         /**
          * Destroy the <code>glpp::gl_list</code>.
-         * 
+         *
          * <p>
          * If no valid list is contained within <code>glpp::gl_list</code> then
          * nothing happens.
@@ -114,14 +114,14 @@ namespace glpp
         //======================================================================
         //Member operators.
         /**
-         * Deleted. 
+         * Deleted.
          */
         gl_list & operator = (const gl_list &) = delete;
         /**
          * Move assignment.
-         * 
+         *
          * Move a <code>glpp::gl_list</code> into <code>this</code>.
-         * 
+         *
          * @param orig The rvalue reference to the gl_list object to be moved
          *      into this object.
          * @return The reference to this object after the move.
@@ -132,7 +132,7 @@ namespace glpp
     private:
         /**
          * Release the list contained in <code>this</code>.
-         * 
+         *
          * <p>
          * Does nothing if there is no list inside <code>this</code>.
          * </p>
@@ -147,11 +147,11 @@ namespace glpp
     //Functions.
     /**
      * Create a <code>glpp::gl_list</code>.
-     * 
+     *
      * @param mode The compilation mode.
      * @param callback The procedure which contains the details of the list.
      * @return The newly created <code>glpp::gl_list</code>.
-     * @throws glpp::error If OpenGL raises an error.
+     * @throw glpp::error If OpenGL raises an error.
      */
     inline gl_list create_list(
             list_mode mode,
@@ -162,7 +162,7 @@ namespace glpp
     }
     /**
      * Submit a call to a <code>glpp::gl_list</code> to OpenGL.
-     * 
+     *
      * @param li The <code>glpp::gl_list</code> to be called.
      */
     inline void submit(const gl_list & li) noexcept

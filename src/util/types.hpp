@@ -1,4 +1,4 @@
-/* 
+/*
  * File:    types.hpp
  * Author:  John Berg
  * Date:    29/10/2017
@@ -28,19 +28,19 @@ namespace glpp
      */
     constexpr const auto VECTOR_SIZE_4 = 4;
     /**
-     * 
+     *
      */
     constexpr const auto AXIS_X = 0;
     /**
-     * 
+     *
      */
     constexpr const auto AXIS_Y = 1;
     /**
-     * 
+     *
      */
     constexpr const auto AXIS_Z = 2;
     /**
-     * 
+     *
      */
     constexpr const auto AXIS_W = 3;
     //==========================================================================
@@ -54,15 +54,15 @@ namespace glpp
      */
     typedef const float_type const_float_type;
     /**
-     * 
+     *
      */
     typedef std::array<float_type, VECTOR_SIZE_2> vector_2;
     /**
-     * 
+     *
      */
     typedef std::array<float_type, VECTOR_SIZE_3> vector_3;
     /**
-     * 
+     *
      */
     typedef std::array<float_type, VECTOR_SIZE_4> vector_4;
     /**
@@ -70,6 +70,7 @@ namespace glpp
      * <code>void</code>.
      */
     typedef const std::function<void ()> procedure;
+    typedef const std::function<void (const GLuint)> strategy;
 } //glpp
 
 #endif //TYPES_HPP

@@ -1,4 +1,4 @@
-/* 
+/*
  * File:    util.hpp
  * Author:  John Berg
  * Date:    29/10/2017
@@ -12,6 +12,7 @@
 #include "util/matrix.hpp"
 #include "util/types.hpp"
 #include "util/vertex_mode.hpp"
+#include "util/base.hpp"
 
 #endif //GLPP_UTIL_HPP
 

@@ -1,4 +1,4 @@
-/* 
+/*
  * File:    capability.hpp
  * Author:  John Berg
  * Date:    29/10/2017
@@ -84,9 +84,9 @@ namespace glpp
     //Functions.
     /**
      * Enable a <code>glpp::capability</code>.
-     * 
+     *
      * @param cap The capability to be enabled.
-     * @throws glpp::error If OpenGL raises an error.
+     * @throw glpp::error If OpenGL raises an error.
      */
     inline void enable(capability cap) throw(error)
     {
@@ -95,9 +95,9 @@ namespace glpp
     }
     /**
      * Disable a <code>glpp::capability</code>.
-     * 
+     *
      * @param cap The capability to be disabled.
-     * @throws glpp::error If OpenGL raises an error.
+     * @throw glpp::error If OpenGL raises an error.
      */
     inline void disable(capability cap) throw(error)
     {
