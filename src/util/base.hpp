@@ -87,7 +87,7 @@ namespace glpp
          *                  the vector.
          */
         template<typename... Ts>
-        constexpr vector_base(Ts&&... elements):
+        constexpr vector_base(const Ts&&... elements):
                 elements_{elements...}
         {
         }
