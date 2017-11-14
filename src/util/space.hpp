@@ -2,9 +2,27 @@
 #define GLPP_SRC_UTIL_SPACE_HPP
 
 #include <GL/gl.h>
+#include "mode.hpp"
 
 namespace glpp
 {
+    //==========================================================================
+    //Functions.
+    /**
+     *
+     * @param mode
+     * @param callback
+     */
+    template<typename F>
+    void vertex_space(
+           vertex_mode mode,
+           F callback)
+    {
+        glBegin((GLenum) mode);
+        callback();
+        glEnd(); //end
+        get_error();
+    }
     /**
      *
      */

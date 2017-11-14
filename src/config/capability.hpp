@@ -88,7 +88,7 @@ namespace glpp
      * @param cap The capability to be enabled.
      * @throw glpp::error If OpenGL raises an error.
      */
-    inline void enable(capability cap) throw(error)
+    inline void enable(capability cap)
     {
         glEnable((GLenum) cap);
         get_error();
@@ -99,7 +99,7 @@ namespace glpp
      * @param cap The capability to be disabled.
      * @throw glpp::error If OpenGL raises an error.
      */
-    inline void disable(capability cap) throw(error)
+    inline void disable(capability cap)
     {
         glDisable((GLenum) cap);
         get_error();

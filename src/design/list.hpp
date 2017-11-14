@@ -7,7 +7,6 @@
 #ifndef LIST_HPP
 #define LIST_HPP
 
-#include <functional>
 #include <GL/gl.h>
 #include "../util.hpp"
 
@@ -22,16 +21,6 @@ namespace glpp
      * Alias of <code>glpp::gl_list</code>.
      */
     typedef gl_list list;
-    //==========================================================================
-    //Enums.
-    /**
-     * The compilations modes available for list.
-     */
-    enum class list_mode: GLenum
-    {
-        COMPILE             = GL_COMPILE,
-        COMPILE_AND_EXECUTE = GL_COMPILE_AND_EXECUTE
-    };
     //==========================================================================
     //Classes.
     /**
@@ -82,16 +71,15 @@ namespace glpp
         template<typename F>
         gl_list(
                 list_mode mode,
-                F callback)
+                F callback):
+                handle_(glGenLists(SIZE))
         {
             //Check errors after generation.
             get_error();
             glNewList(handle_, (GLenum) mode);
-            {
-                callback();
-            }
+            callback();
             glEndList();
-            get_error();
+            get_error(); //Check if any errors have been raised.
         }
     public:
         /**

@@ -40,7 +40,7 @@ namespace glpp
      * representations of errors raised by OpenGL.
      * </p>
      */
-    class error: std::exception
+    class error final: public std::exception
     {
         //======================================================================
         //Members.

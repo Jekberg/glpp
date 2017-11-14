@@ -1,4 +1,4 @@
-/* 
+/*
  * File:    light.hpp
  * Author:  John Berg
  * Date:    02/11/2017
@@ -11,22 +11,10 @@
 
 namespace glpp
 {
-    //==========================================================================
-    //Enums.
-    /**
-     * 
-     */
-    enum class light_mode: GLenum
-    {
-        AMBIENT     = GL_AMBIENT,
-        DIFFUSE     = GL_DIFFUSE,
-        SPECULAR    = GL_SPECULAR
-    };
-    
     class light
     {
     public:
-        
+
     };
 } //glpp
 

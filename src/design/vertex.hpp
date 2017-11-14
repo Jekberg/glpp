@@ -33,9 +33,11 @@ namespace glpp
         vertex(const vertex<Size>& orig):
                 vector_base<Size, float_type>{orig}
         {
-
         }
         vertex(const vertex<Size>&&) = delete;
+        virtual ~vertex() override final
+        {
+        }
     };
     //==========================================================================
     //Anon namespace.
