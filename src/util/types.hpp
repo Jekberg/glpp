@@ -53,24 +53,6 @@ namespace glpp
      * The const floating point type.
      */
     typedef const float_type const_float_type;
-    /**
-     *
-     */
-    typedef std::array<float_type, VECTOR_SIZE_2> vector_2;
-    /**
-     *
-     */
-    typedef std::array<float_type, VECTOR_SIZE_3> vector_3;
-    /**
-     *
-     */
-    typedef std::array<float_type, VECTOR_SIZE_4> vector_4;
-    /**
-     * Alias for a functor which takes no arguments, and returns
-     * <code>void</code>.
-     */
-    typedef const std::function<void ()> procedure;
-    typedef const std::function<void (const GLuint)> strategy;
 } //glpp
 
 #endif //TYPES_HPP

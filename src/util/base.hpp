@@ -9,6 +9,13 @@ namespace glpp
     //==========================================================================
     //Classes.
     /**
+     * The <code>glpp::vector_base</code> class provides basic functionality of
+     * vector-like data types.
+     *
+     * <p>
+     * <code>glpp::vector_base</code> restricts types to only contain
+     * fundamental data types.
+     * </p>
      *
      * @param Size The number of elements which can be held by
      *              <code>glpp::vector_base</code>.
@@ -19,9 +26,14 @@ namespace glpp
     {
         //======================================================================
         //Static asserts.
+    private:
         static_assert(
                 std::is_fundamental<T>::value,
                 "vector_base only works with fundamental types.");
+        //======================================================================
+        //Friends
+        template<std::size_t Index, std::size_t _Size, typename _T>
+        friend constexpr _T get(const vector_base<_Size, _T>&) noexcept;
         //======================================================================
         //Typedefs.
         /**
@@ -53,10 +65,14 @@ namespace glpp
          * <code>glpp::vector_base</code>.
          */
         typedef const_value_type& const_value_type_ref;
-    private:
         //======================================================================
         //Static members.
-        //static const std::string OUT_OF_RANGE = "??";
+        /**
+         * The c string which contains an error message for when attempting to
+         * access an element at an index which exceeds the size of the vector.
+         */
+        static constexpr const char* OUT_OF_RANGE_MESSAGE =
+                "Index out of range";
         //======================================================================
         //Members.
         /**
@@ -88,11 +104,22 @@ namespace glpp
          */
         template<typename... Ts>
         constexpr vector_base(const Ts&&... elements):
-                elements_{elements...}
+                elements_{static_cast<T>(elements)...}
         {
         }
         /**
+         * Copy constructor.
          *
+         * <p>
+         * Creates a <code>glpp::vector_base</code> which is exactly equal to
+         * another <code>glpp::vector_base</code>.
+         * </p>
+         *
+         * <p>
+         * Copy each the elements inside the original
+         * <code>glpp::vector_base</code> into a newly created
+         * <code>glpp::vector_base</code>.
+         * </p>
          *
          * @param orig The original <code>glpp::vector_base</code> to be copied.
          */
@@ -212,7 +239,7 @@ namespace glpp
         {
             if(index < Size)
                 return elements_[index];
-            throw std::out_of_range("");
+            throw std::out_of_range(OUT_OF_RANGE_MESSAGE);
         }
         /**
          * Get the element at a given index within <code>this</code>
@@ -234,6 +261,31 @@ namespace glpp
             throw std::out_of_range("");
         }
     };
+    //==========================================================================
+    //Functions.
+    /**
+     * Compile time get function, which can retrieve elements from a
+     * <code>glpp::vector_base</code> by value.
+     *
+     * <p>
+     * Attempting to access a value outside the range of the vector will result
+     * in failure to compile.
+     * </p>
+     *
+     * @param Index The index of the element.
+     * @param Size The size of the <code>glpp::vector_base</code>.
+     * @param T The type contained within <code>glpp::vector_base</code>.
+     * @param vect The <code>glpp::vector_base</code> to retrieve the element
+     *              from.
+     * @return The value of the <code>glpp::vector_base</code> at
+     *          <code>Index</code>.
+     */
+    template<std::size_t Index, std::size_t Size, typename T>
+    constexpr T get(const vector_base<Size, T>& vect) noexcept
+    {
+        static_assert(Index < Size, "Index out of bounds.");
+        return vect.elements_[Index];
+    }
 } //glpp
 
 #endif // BASE_HPP

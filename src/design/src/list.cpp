@@ -12,21 +12,6 @@ namespace glpp
             handle_(NO_LIST)
     {
     }
-    gl_list::gl_list(
-            list_mode mode,
-            procedure callback)
-            throw(error):
-            handle_(glGenLists(SIZE))
-    {
-        //Check errors after generation.
-        get_error();
-        glNewList(handle_, (GLenum) mode);
-        {
-            callback();
-        }
-        glEndList();
-        get_error();
-    }
     gl_list::gl_list(gl_list && orig)
             noexcept:
             handle_(orig.handle_)

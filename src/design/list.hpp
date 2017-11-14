@@ -43,8 +43,8 @@ namespace glpp
     private:
         //======================================================================
         //Friends.
-        friend gl_list create_list(list_mode, procedure)
-                throw (error);
+        template<typename F>
+        friend gl_list create_list(list_mode, F);
         friend void submit(const gl_list &) noexcept;
         //======================================================================
         //Static members.
@@ -74,14 +74,25 @@ namespace glpp
          * Create a <code>glpp::list</code> using a specific compilation mode,
          * and a procedure with the details of the list.
          *
+         * @param F The type of the callback.
          * @param mode The compilation mode.
          * @param callback The procedure with the details of the list.
-         * @throws glpp::error If OpenGL raises an error.
+         * @throw glpp::error If OpenGL raises an error.
          */
+        template<typename F>
         gl_list(
                 list_mode mode,
-                procedure callback)
-                throw(error);
+                F callback)
+        {
+            //Check errors after generation.
+            get_error();
+            glNewList(handle_, (GLenum) mode);
+            {
+                callback();
+            }
+            glEndList();
+            get_error();
+        }
     public:
         /**
          * Deleted.
@@ -153,10 +164,10 @@ namespace glpp
      * @return The newly created <code>glpp::gl_list</code>.
      * @throw glpp::error If OpenGL raises an error.
      */
+    template<typename F>
     inline gl_list create_list(
             list_mode mode,
-            procedure callback)
-            throw(error)
+            F callback)
     {
         return gl_list(mode, callback);
     }

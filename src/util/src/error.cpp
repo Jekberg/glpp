@@ -34,4 +34,12 @@ namespace glpp
     {
         return (char *)gluErrorString((GLenum) code_);
     }
+    //==========================================================================
+    //Functions.
+    void get_error()
+    {
+        GLenum err = glGetError();
+        if(err)
+            throw error((error_code) err);
+    }
 } //glpp
