@@ -1,11 +1,18 @@
-#ifndef BASE_HPP
-#define BASE_HPP
+#ifndef SRC_UTIL_VECTOR_HPP
+#define SRC_UTIL_VECTOR_HPP
 
 #include <exception>
-#include <string>
 
 namespace glpp
 {
+    //==========================================================================
+    //Forward declarations.
+    template<std::size_t, typename>
+    class vector_base;
+    //==========================================================================
+    //Using.
+    template<std::size_t Size, typename T>
+    using vector = vector_base<Size, T>;
     //==========================================================================
     //Classes.
     /**
@@ -22,7 +29,7 @@ namespace glpp
      * @param T The type of the elements within <code>glpp::vector_base</code>.
      */
     template<std::size_t Size, typename T>
-    class vector_base
+    class vector_base final
     {
         //======================================================================
         //Static asserts.
@@ -140,7 +147,7 @@ namespace glpp
         /**
          * Destroy the <code>glpp::vector_base</code>.
          */
-        virtual ~vector_base() noexcept
+        ~vector_base() noexcept
         {
         }
         //======================================================================
@@ -258,7 +265,7 @@ namespace glpp
         {
             if(index < Size)
                 return elements_[index];
-            throw std::out_of_range("");
+            throw std::out_of_range(OUT_OF_RANGE_MESSAGE);
         }
     };
     //==========================================================================
@@ -288,4 +295,4 @@ namespace glpp
     }
 } //glpp
 
-#endif // BASE_HPP
+#endif //SRC_UTIL_VECTOR_HPP

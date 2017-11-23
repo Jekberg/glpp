@@ -14,7 +14,6 @@ namespace glpp
     class light
     {
     public:
-
     };
 } //glpp
 

@@ -4,70 +4,93 @@
  * Date:    12/10/2017
  */
 
-#ifndef VERTEX_HPP
-#define VERTEX_HPP
+#ifndef GLPP_SRC_DESIGN_VERTEX_HPP
+#define GLPP_SRC_DESIGN_VERTEX_HPP
 
-#include <stdexcept>
-#include <utility>
 #include <GL/gl.h>
 #include "../util.hpp"
 
 namespace glpp
 {
     //==========================================================================
-    //Classes.
-    template<std::size_t Size = 3>
-    class vertex final: public vector_base<Size, float_type>
-    {
-        //======================================================================
-        //Static asserts
-    private:
-        static_assert(Size < 5, "Unsupported vertex size.");
-        static_assert(Size > 1, "Unsupported vertex size.");
-    public:
-        template<typename... Ts>
-        constexpr vertex(Ts&&... elements):
-                vector_base<Size, float_type>{std::forward<Ts>(elements)...}
-        {
-        }
-        vertex(const vertex<Size>& orig):
-                vector_base<Size, float_type>{orig}
-        {
-        }
-        vertex(const vertex<Size>&&) = delete;
-        virtual ~vertex() override final
-        {
-        }
-    };
+    //Typedefs.
+    /**
+     * The type which represents an OpenGL vertex of type float which is using 2
+     * coordinates.
+     */
+    typedef vector_base<2, float_type> vertex2;
+    /**
+     * The type which represents an OpenGL vertex of type float, which is using
+     * 3 coordinates.
+     */
+    typedef vector_base<3, float_type> vertex3;
+    /**
+     * The type which represents an OpenGL vertex of type float which is using 4
+     * coordinates.
+     */
+    typedef vector_base<4, float_type> vertex4;
     //==========================================================================
-    //Anon namespace.
-    namespace
-    {
-        template<std::size_t Size>
-        struct vertex_function_table;
-        template<>
-        struct vertex_function_table<2>
-        {
-            static constexpr const auto function = glVertex2fv;
-        };
-        template<>
-        struct vertex_function_table<3>
-        {
-            static constexpr const auto function = glVertex3fv;
-        };
-        template<>
-        struct vertex_function_table<4>
-        {
-            static constexpr const auto function = glVertex4fv;
-        };
-    } //anon
+    //Functions.
     /**
      *
+     *
+     *
+     * @param vtx The <code>const</code> reference to a ...
+     */
+    void vertex(const vertex2& vtx) noexcept;
+    /**
+     *
+     * @param
+     * @return
+     */
+    void vertex(const vertex2&& vtx) noexcept;
+    /**
+     *
+     * @param
+     * @return
+     */
+    void vertex(const vertex3& vtx) noexcept;
+    /**
+     *
+     * @param
+     * @return
+     */
+    void vertex(const vertex3&& vtx) noexcept;
+    /**
+     *
+     *
+     *
+     * @param
+     * @return
+     */
+    void vertex(const vertex4& vtx) noexcept;
+    /**
+     *
+     * @param
+     * @return
+     */
+    void vertex(const vertex4&& vtx) noexcept;
+    /**
+     *
+     * @param
+     * @return
      */
     template<std::size_t Size>
-    void submit(const vertex<Size>& vert)
+    constexpr void vertex(const vector_base<Size, float_type>& vtx) noexcept
     {
-        vertex_function_table<Size>::function(vert.begin());
+        //Forward the call to the correct overload.
+        vertex(std::forward<decltype(vtx)>(vtx));
+    }
+    /**
+     *
+     * @param
+     * @return
+     */
+    template<std::size_t Size>
+    constexpr void vertex(const vector_base<Size, float_type>&& vtx) noexcept
+    {
+        //Forward the call to the correct overload.
+        vertex(std::forward<decltype(vtx)>(vtx));
     }
 } //glpp
-#endif //VERTEX_HPP
+#endif //GLPP_SRC_DESIGN_VERTEX_HPP
