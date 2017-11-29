@@ -14,11 +14,9 @@
 namespace glpp
 {
     /**
-     * The error codes which can be raised by OpenGL.
+     * @brief The error codes which can be raised by OpenGL.
      *
-     * <p>
-     * Each enum corresponds to a <code>GLenum</code>.
-     * </p>
+     * Each enum value corresponds to a @typedef GLenum.
      */
     enum class error_code: GLenum
     {
@@ -46,7 +44,7 @@ namespace glpp
         //Members.
     private:
         /**
-         * The <code>error_code</code> which was raised.
+         * @brief The error_code which was raised.
          */
         error_code code_;
         //======================================================================
@@ -57,58 +55,43 @@ namespace glpp
          */
         error() = delete;
         /**
-         * Create a <code>glpp::error</code> object with a
-         * <code>glpp::error_code</code> that was raised by OpenGL.
+         * Create an error object with an error_code that was raised by OpenGL.
          *
-         * @param code The error code which was raised.
+         * @param code The error_code which was raised.
          */
         explicit error(const error_code code) noexcept;
         /**
-         * Copy constructor.
+         * @brief Copy constructor.
          *
          * <p>
-         * Create a <code>glpp::error</code> by copying an existing
-         * <code>glpp::error</code> object, so that the newly created
-         * <code>glpp::error</code> contains the same
-         * <code>glpp::error_code</code>.
+         * Create an error by copying an existing error object, so that the
+         * newly created error contains the same error_code.
          * </p>
          *
-         * @param orig The reference to the original <code>glpp::error</code>
-         *          object to be copied.
+         * @param orig The reference to the original error object to be copied.
          */
-        error(const error & orig) noexcept;
-        /**
-         * Move constructor.
-         *
-         * <p>
-         * Create a <code>glpp::error</code> object by copying the
-         * <code>glpp::error_code</code> from the temporary object into the
-         * newly created object.
-         * </p>
-         *
-         * @param orig The rvalue reference of the original
-         *          <code>glpp::error</code> object to be moved.
-         */
-        error(const error && orig) noexcept;
+        error(const error& orig) noexcept;
         //======================================================================
         //Destructors.
         /**
+         * @brief Destructor.
+         *
          * Destroy the error.
          */
         virtual ~error();
         //======================================================================
         //Member operators.
         /**
-         * Get the <code>glpp::error_code</code> which si contained within
-         * <code>this</code> <code>glpp::error</code>.
-         *
-         * @return The error code which was raised.
+         * @brief Get the error_code from this error.
+         * @return The error_code which was raised.
          */
         inline error_code code() const noexcept
         {
             return code_;
         }
         /**
+         * @brief Get the string representation of the error.
+         *
          * Get the c string message which describes the cause of the exception.
          *
          * <p>

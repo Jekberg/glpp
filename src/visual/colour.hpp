@@ -1,4 +1,4 @@
-/* 
+/*
  * File:    colour.hpp
  * Author:  John
  * Date:    27/10/2017
@@ -8,6 +8,7 @@
 #define COLOUR_HPP
 
 #include <GL/gl.h>
+#include "../util.hpp"
 
 namespace glpp
 {
@@ -23,7 +24,7 @@ namespace glpp
     //==========================================================================
     //Classes.
     /**
-     * 
+     *
      */
     class rgba_colour
     {
@@ -102,7 +103,7 @@ namespace glpp
         /**
          * Create a <code>glpp::rgba_colour</code> by specifying the values
          * of red, green, blue and alpha.
-         * 
+         *
          * @param red The red value.
          * @param green The green value.
          * @param blue The blue value.
@@ -126,12 +127,20 @@ namespace glpp
          * Destroy the <code>glpp::rgba_colour</code>.
          */
         ~rgba_colour() noexcept;
+        operator const vector_base<4, float_type> () const noexcept
+        {
+            return {
+                static_cast<float_type>(red_/255),
+                static_cast<float_type>(green_/255),
+                static_cast<float_type>(blue_/255),
+                static_cast<float_type>(alpha_/255)};
+        }
     };
     //==========================================================================
     //Functions.
     /**
      * Submit a <code>glpp::rgba_colour</code> to OpenGL.
-     * 
+     *
      * @param col The reference to the <code>glpp::rgba_colour</code>.
      */
     inline void submit(const rgba_colour & col) noexcept
@@ -140,7 +149,7 @@ namespace glpp
     }
     /**
      * Submit a <code>glpp::rgba_colour</code> to OpenGL.
-     * 
+     *
      * @param col The rvalue reference to the <code>glpp::rgba_colour</code>.
      */
     inline void submit(const rgba_colour && col) noexcept

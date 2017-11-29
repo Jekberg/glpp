@@ -15,12 +15,6 @@ namespace glpp
             code_(orig.code_)
     {
     }
-    error::error(const error && orig)
-            noexcept:
-            std::exception(),
-            code_(orig.code_)
-    {
-    }
     //==========================================================================
     //Destructor.
     error::~error()

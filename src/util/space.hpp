@@ -9,26 +9,36 @@ namespace glpp
     //==========================================================================
     //Functions.
     /**
+     * This function calls a function or function object between glBegin(GLenum)
+     * and GLenum. If the callback object is <code>noexcept</code>, then this
+     * function is also <code>noexcept</code>.
      *
-     * @param mode
-     * @param callback
+     * @brief Call a procedure between to submit vertices using a specific
+     *          vertex_mode.
+     * @param mode The vertex_mode which is used in glBegin(GLenum).
+     * @param callback The function object which takes no arguments.
      */
     template<typename F>
     void vertex_space(
            vertex_mode mode,
            F callback)
+           noexcept(noexcept(callback()))
     {
-        glBegin((GLenum) mode);
+        glBegin(static_cast<GLenum>(mode));
         callback();
-        glEnd(); //end
-        get_error();
+        glEnd();
     }
     /**
      *
+     *
+     *
+     * @brief Call a procedure between a matrix push and pop onto the matrix
+     *          stack.
+     * @param The function object which takes no arguments.
      */
     template<typename F>
     void matrix_space(F callback)
-    noexcept(noexcept(callback()))
+            noexcept(noexcept(callback()))
     {
         glPushMatrix();
         callback();
