@@ -14,36 +14,6 @@
 namespace glpp
 {
     //==========================================================================
-    //Constants.
-    /**
-     * The size of a 2 dimensional vector.
-     */
-    constexpr const auto VECTOR_SIZE_2 = 2;
-    /**
-     * The size of a 3 dimensional vector.
-     */
-    constexpr const auto VECTOR_SIZE_3 = 3;
-    /**
-     * The size of a 4 dimensional vector.
-     */
-    constexpr const auto VECTOR_SIZE_4 = 4;
-    /**
-     *
-     */
-    constexpr const auto AXIS_X = 0;
-    /**
-     *
-     */
-    constexpr const auto AXIS_Y = 1;
-    /**
-     *
-     */
-    constexpr const auto AXIS_Z = 2;
-    /**
-     *
-     */
-    constexpr const auto AXIS_W = 3;
-    //==========================================================================
     //Typedefs.
     /**
      * The floating point type.

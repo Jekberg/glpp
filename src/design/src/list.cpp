@@ -4,30 +4,30 @@ namespace glpp
 {
     //==========================================================================
     //Static members.
-    const GLuint gl_list::NO_LIST = 0;
-    const GLuint gl_list::SIZE = 1;
+    const GLuint list::NO_LIST = 0;
+    const GLuint list::SIZE = 1;
     //==========================================================================
     //Constructors.
-    gl_list::gl_list() noexcept:
+    list::list() noexcept:
             handle_(NO_LIST)
     {
     }
-    gl_list::gl_list(gl_list && orig)
+    list::list(list && orig)
             noexcept:
             handle_(orig.handle_)
     {
         orig.handle_ = NO_LIST;
-    } //gl_list(const gl_list &)
+    } //list(const list &)
     //==========================================================================
     //Destructors.
-    gl_list::~gl_list()
+    list::~list()
             noexcept
     {
         release();
-    } //gl_list()
+    } //list()
     //==========================================================================
     //Member operators.
-    gl_list & gl_list::operator = (gl_list && orig)
+    list& list::operator= (list&& orig)
             noexcept
     {
         release();

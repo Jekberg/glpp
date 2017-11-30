@@ -10,7 +10,7 @@ namespace glpp
     //Functions.
     /**
      * This function calls a function or function object between glBegin(GLenum)
-     * and GLenum. If the callback object is <code>noexcept</code>, then this
+     * and glEnd(). If the callback object is <code>noexcept</code>, then this
      * function is also <code>noexcept</code>.
      *
      * @brief Call a procedure between to submit vertices using a specific
@@ -29,11 +29,11 @@ namespace glpp
         glEnd();
     }
     /**
+     * This function calls a function or function object between glPushMatrix()
+     * and glPopMatrix(). If the callback object is <code>noexcept</code>, then
+     * this function is also <code>noexcept</code>.
      *
-     *
-     *
-     * @brief Call a procedure between a matrix push and pop onto the matrix
-     *          stack.
+     * @brief Call a procedure between a glMatrixPush() and glMatrixPop().
      * @param The function object which takes no arguments.
      */
     template<typename F>
@@ -45,7 +45,16 @@ namespace glpp
         glPopMatrix();
     }
     /**
+     * This function calls a function or function object between
+     * glPushAttribute(GLbitfield) and glPopAttribute(). If the callback object
+     * is <code>noexcept</code>, then this function is also
+     * <code>noexcept</code>.
      *
+     * @brief Call a procedure between a glPushAttribute(GLbitfield) and
+     *          glPopAttribute().
+     * @param mask The GLbitfield which contains the attributes to push onto the
+     *          attribute stack.
+     * @param callback The function object which takes no arguments.
      */
     template<typename F>
     void attribute_space(

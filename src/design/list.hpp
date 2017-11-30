@@ -1,11 +1,5 @@
-/*
- * File:    list.hpp
- * Author:  John Berg
- * Date:    27/10/2017
- */
-
-#ifndef LIST_HPP
-#define LIST_HPP
+#ifndef GLPP_SRC_DESIGN_LIST_HPP
+#define GLPP_SRC_DESIGN_LIST_HPP
 
 #include <GL/gl.h>
 #include "../util.hpp"
@@ -13,28 +7,21 @@
 namespace glpp
 {
     //==========================================================================
-    //Forward declarations.
-    class gl_list;
-    //==========================================================================
-    //Typedefs.
-    /**
-     * Alias of <code>glpp::gl_list</code>.
-     */
-    typedef gl_list list;
-    //==========================================================================
     //Classes.
     /**
-     * The <code>gl_list</code> class is a wrapper around the OpenGL list which
+     * The list class is a wrapper around the OpenGL list which
      * manages lists as resources.
+     *
+     * @brief A wrapper class around an OpenGL display %list.
      */
-    class gl_list
+    class list
     {
-    private:
         //======================================================================
         //Friends.
+    private:
         template<typename F>
-        friend gl_list create_list(list_mode, F);
-        friend void submit(const gl_list &) noexcept;
+        friend list create_list(list_mode, F);
+        friend void submit(const list &) noexcept;
         //======================================================================
         //Static members.
         /**
@@ -55,23 +42,24 @@ namespace glpp
         //Constructors.
     public:
         /**
-         * Create a <code>glpp:gl_list</code> which contains no list.
+         * @brief Create a list which contains no %list.
          */
-        gl_list() noexcept;
+        list() noexcept;
     private:
         /**
-         * Create a <code>glpp::list</code> using a specific compilation mode,
-         * and a procedure with the details of the list.
+         * Create a list using a specific compilation mode, and a procedure with
+         * the details of the list.
          *
-         * @param F The type of the callback.
-         * @param mode The compilation mode.
+         * @brief Construct a list object.
+         * @param mode The list_mode used during construction.
          * @param callback The procedure with the details of the list.
-         * @throw glpp::error If OpenGL raises an error.
+         * @throw error If OpenGL raises an error.
+         * @throw std::exception If The callback throws a std::exception.
          */
         template<typename F>
-        gl_list(
+        list(
                 list_mode mode,
-                F callback):
+                F callback) try:
                 handle_(glGenLists(SIZE))
         {
             //Check errors after generation.
@@ -81,60 +69,54 @@ namespace glpp
             glEndList();
             get_error(); //Check if any errors have been raised.
         }
+        catch(const std::exception& e)
+        {
+            release();
+            throw;
+        }
     public:
         /**
          * Deleted.
          */
-        gl_list(const gl_list &) = delete;
+        list(const list &) = delete;
         /**
-         * Move constructor.
+         * Move the list of a temporary list into a list by taking the list of
+         * the temporary list.
          *
-         * <p>
-         * Move the <list of a temporary <code>glpp::gl_list</code> into a
-         * <code>glpp::gl_list</code> by taking the list of the temporary
-         * <code>glpp::gl_list</code>.
-         * </p>
-         *
-         * @param orig The rvalue reference to the <code>glpp::gl_list</code>
-         *          to be moved.
+         * @brief Move constructor.
+         * @param orig The rvalue reference to the list to be moved.
          */
-        gl_list(gl_list && orig) noexcept;
+        list(list&& orig) noexcept;
         //======================================================================
         //Destructors.
         /**
-         * Destroy the <code>glpp::gl_list</code>.
+         * If no valid list is contained within list then nothing happens.
          *
-         * <p>
-         * If no valid list is contained within <code>glpp::gl_list</code> then
-         * nothing happens.
-         * </p>
+         *@brief Destroy the list.
          */
-        ~gl_list() noexcept;
+        ~list() noexcept;
         //======================================================================
         //Member operators.
         /**
          * Deleted.
          */
-        gl_list & operator = (const gl_list &) = delete;
+        list & operator = (const list &) = delete;
         /**
-         * Move assignment.
+         * Move a list into this list.
          *
-         * Move a <code>glpp::gl_list</code> into <code>this</code>.
-         *
-         * @param orig The rvalue reference to the gl_list object to be moved
+         * @brief Move assignment.
+         * @param orig The rvalue reference to the list object to be moved
          *      into this object.
          * @return The reference to this object after the move.
          */
-        gl_list & operator = (gl_list && orig) noexcept;
+        list & operator = (list && orig) noexcept;
         //======================================================================
         //Member functions.
     private:
         /**
-         * Release the list contained in <code>this</code>.
-         *
-         * <p>
          * Does nothing if there is no list inside <code>this</code>.
-         * </p>
+         *
+         * @brief Release the list contained in this list.
          */
         inline void release() noexcept
         {
@@ -145,29 +127,34 @@ namespace glpp
     //==========================================================================
     //Functions.
     /**
-     * Create a <code>glpp::gl_list</code>.
+     * Create a list object by calling a procedure containing the steps to
+     * creating the list.
      *
+     * @brief Create a list object.
      * @param mode The compilation mode.
      * @param callback The procedure which contains the details of the list.
-     * @return The newly created <code>glpp::gl_list</code>.
-     * @throw glpp::error If OpenGL raises an error.
+     * @return The newly created list.
+     * @throw error If OpenGL raises an error.
+     * @throw std::exception If the callback throws.
      */
     template<typename F>
-    inline gl_list create_list(
+    inline list create_list(
             list_mode mode,
             F callback)
     {
-        return gl_list(mode, callback);
+        return list(mode, callback);
     }
     /**
-     * Submit a call to a <code>glpp::gl_list</code> to OpenGL.
+     * The result of this method is the equivalent of calling
+     * glCallList(GLuint).
      *
-     * @param li The <code>glpp::gl_list</code> to be called.
+     * @brief Submit a call to a list.
+     * @param li The list to be called.
      */
-    inline void submit(const gl_list & li) noexcept
+    inline void submit(const list & li) noexcept
     {
         glCallList(li.handle_);
     }
 } //glpp;
 
-#endif //LIST_HPP
+#endif //GLPP_SRC_DESIGN_LIST_HPP
