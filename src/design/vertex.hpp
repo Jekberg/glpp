@@ -1,9 +1,3 @@
-/*
- * File:    vertex.hpp
- * Author:  John Berg
- * Date:    12/10/2017
- */
-
 #ifndef GLPP_SRC_DESIGN_VERTEX_HPP
 #define GLPP_SRC_DESIGN_VERTEX_HPP
 
@@ -13,82 +7,76 @@
 namespace glpp
 {
     //==========================================================================
-    //Typedefs.
-    /**
-     * The type which represents an OpenGL vertex of type float which is using 2
-     * coordinates.
-     */
-    typedef vector_base<2, float_type> vertex2;
-    /**
-     * The type which represents an OpenGL vertex of type float, which is using
-     * 3 coordinates.
-     */
-    typedef vector_base<3, float_type> vertex3;
-    /**
-     * The type which represents an OpenGL vertex of type float which is using 4
-     * coordinates.
-     */
-    typedef vector_base<4, float_type> vertex4;
-    //==========================================================================
     //Functions.
     /**
+     * This method is equivalent to glVertex2f(GLfloat, GLfloat).
      *
-     *
-     *
-     * @param vtx The <code>const</code> reference to a ...
+     * @brief Submit a vertex of length 2.
+     * @param vtx The reference to a vertex of length 2.
      */
-    void vertex(const vertex2& vtx) noexcept;
+    void vertex(const float_vector2& vtx) noexcept;
     /**
+     * This method is equivalent to glVertex2f(GLfloat, GLfloat).
      *
-     * @param
-     * @return
+     * @brief Submit a vertex of length 2.
+     * @param vtx The rvalue reference to a vertex of length 2.
      */
-    void vertex(const vertex2&& vtx) noexcept;
+    void vertex(const float_vector2&& vtx) noexcept;
     /**
+     * This method is equivalent to glVertex3f(GLfloat, GLfloat, GLfloat).
      *
-     * @param
-     * @return
+     * @brief Submit a vertex of length 3.
+     * @param vtx The reference to a vertex of length 3.
      */
-    void vertex(const vertex3& vtx) noexcept;
+    void vertex(const float_vector3& vtx) noexcept;
     /**
+     * This method is equivalent to glVertex3f(GLfloat, GLfloat, GLfloat).
      *
-     * @param
-     * @return
+     * @brief Submit a vertex of length 3.
+     * @param vtx The rvalue reference to a vertex of length 3.
      */
-    void vertex(const vertex3&& vtx) noexcept;
+    void vertex(const float_vector3&& vtx) noexcept;
     /**
+     * This method is equivalent to
+     * glVertex4f(GLfloat, GLfloat, GLfloat, GLfloat).
      *
-     *
-     *
-     * @param
-     * @return
+     * @brief Submit a vertex of length 4.
+     * @param vtx The reference to a vertex of length 4.
      */
-    void vertex(const vertex4& vtx) noexcept;
+    void vertex(const float_vector4& vtx) noexcept;
     /**
+     * This method is equivalent to
+     * glVertex4f(GLfloat, GLfloat, GLfloat, GLfloat).
      *
-     * @param
-     * @return
+     * @brief Submit a vertex of length 4.
+     * @param vtx The rvalue reference to a vertex of length 4.
      */
-    void vertex(const vertex4&& vtx) noexcept;
+    void vertex(const float_vector4&& vtx) noexcept;
     /**
+     * Compilation will fail if no existing overload exists.
      *
-     * @param
-     * @return
+     * @brief Forward a vertex which size cannot be deduced to the correct
+     *          function.
+     * @param vtx The reference to a vertex of varying size.
      */
     template<std::size_t Size>
-    constexpr void vertex(const vector_base<Size, float_type>& vtx) noexcept
+    constexpr void vertex(const float_vector<Size>& vtx) noexcept
     {
+        static_assert(2 <= Size && Size <= 4, "No existing vertex function.");
         //Forward the call to the correct overload.
         vertex(std::forward<decltype(vtx)>(vtx));
     }
     /**
+     * Compilation will fail if no existing overload exists.
      *
-     * @param
-     * @return
+     * @brief Forward a vertex which size cannot be deduced to the correct
+     *          function.
+     * @param vtx The rvalue reference to a vertex of varying size.
      */
     template<std::size_t Size>
-    constexpr void vertex(const vector_base<Size, float_type>&& vtx) noexcept
+    constexpr void vertex(const float_vector<Size>&& vtx) noexcept
     {
+        static_assert(2 <= Size && Size <= 4, "No existing vertex function.");
         //Forward the call to the correct overload.
         vertex(std::forward<decltype(vtx)>(vtx));
     }

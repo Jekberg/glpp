@@ -30,17 +30,17 @@ namespace glpp
     void light(
             light_source src,
             light_mode mode,
-            const vector_base<4, float_type>& v);
+            const float_vector4& v);
     void light(
             light_source src,
             light_mode mode,
-            const vector_base<4, float_type>&& v);
+            const float_vector4&& v);
     void light_at(
             light_source src,
-            const vector_base<4, float_type>& v);
+            const float_vector4& v);
     void light_at(
             light_source src,
-            const vector_base<4, float_type>&& v);
+            const float_vector4&& v);
 } //glpp
 
 #endif //LIGHT_HPP

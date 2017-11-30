@@ -23,10 +23,10 @@ namespace glpp
     };
     //==========================================================================
     //Functions.
-    void shininess(face p_face, const float_type shininess_value);
+    void shininess(face p_face, const GLfloat shininess_value);
     void material(
             face p_face,
-            const glpp::vector_base<4, float_type>& v);
+            const float_vector4& v);
 }
 
 #endif //GLPP_SRC_VISUAL_MATERIAL_HPP

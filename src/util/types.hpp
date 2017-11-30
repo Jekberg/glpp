@@ -1,29 +1,19 @@
-/*
- * File:    types.hpp
- * Author:  John Berg
- * Date:    29/10/2017
- */
+#ifndef GLPP_SRC_UTIL_TYPES_HPP
+#define GLPP_SRC_UTIL_TYPES_HPP
 
-#ifndef TYPES_HPP
-#define TYPES_HPP
-
-#include <array>
-#include <functional>
 #include <GL/gl.h>
+#include "vector.hpp"
 
 namespace glpp
 {
     //==========================================================================
+    template<std::size_t Size>
+    using float_vector = vector_base<Size, GLfloat>;
+    //==========================================================================
     //Typedefs.
-    /**
-     * The floating point type.
-     */
-    typedef GLfloat float_type;
-    /**
-     * The const floating point type.
-     */
-    typedef const float_type const_float_type;
+    typedef float_vector<2> float_vector2;
+    typedef float_vector<3> float_vector3;
+    typedef float_vector<4> float_vector4;
 } //glpp
 
-#endif //TYPES_HPP
-
+#endif //GLPP_SRC_UTIL_TYPES_HPP

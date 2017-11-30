@@ -13,21 +13,17 @@
 namespace glpp
 {
     //==========================================================================
-    //Typedefs.
-    /**
-     *
-     */
-    typedef vector_base<3, float_type> normal3;
-    //==========================================================================
     //Functions.
     /**
-     * @param
+     * @brief Submit a normal.
+     * @param nml The reference to a normal to be submitted.
      */
-    void normal(const normal3& nml) noexcept;
+    void normal(const float_vector3& nml) noexcept;
     /**
-     * @param
+     * @brief Submit a normal.
+     * @param nml THe rvalue reference to be submitted.
      */
-    void normal(const normal3&& nml) noexcept;
+    void normal(const float_vector3&& nml) noexcept;
 }
 
 #endif //GLPP_SRC_DESIGN_NORMAL_HPP

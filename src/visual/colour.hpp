@@ -127,14 +127,6 @@ namespace glpp
          * Destroy the <code>glpp::rgba_colour</code>.
          */
         ~rgba_colour() noexcept;
-        operator const vector_base<4, float_type> () const noexcept
-        {
-            return {
-                static_cast<float_type>(red_/255),
-                static_cast<float_type>(green_/255),
-                static_cast<float_type>(blue_/255),
-                static_cast<float_type>(alpha_/255)};
-        }
     };
     //==========================================================================
     //Functions.

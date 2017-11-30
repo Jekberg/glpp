@@ -5,27 +5,27 @@
 using glpp::get;
 //==============================================================================
 //Functions.
-void glpp::texture_coordinate(const texture_coordinate2& tex) noexcept
+void glpp::texture_coordinate(const glpp::float_vector2& tex) noexcept
 {
     glTexCoord2f(get<0>(tex), get<1>(tex));
 }
-void glpp::texture_coordinate(const texture_coordinate2&& tex) noexcept
+void glpp::texture_coordinate(const glpp::float_vector2&& tex) noexcept
 {
     glTexCoord2f(get<0>(tex), get<1>(tex));
 }
-void glpp::texture_coordinate(const texture_coordinate3& tex) noexcept
+void glpp::texture_coordinate(const glpp::float_vector3& tex) noexcept
 {
     glTexCoord3f(get<0>(tex), get<1>(tex), get<2>(tex));
 }
-void glpp::texture_coordinate(const texture_coordinate3&& tex) noexcept
+void glpp::texture_coordinate(const glpp::float_vector3&& tex) noexcept
 {
     glTexCoord3f(get<0>(tex), get<1>(tex), get<2>(tex));
 }
-void glpp::texture_coordinate(const texture_coordinate4& tex) noexcept
+void glpp::texture_coordinate(const glpp::float_vector4& tex) noexcept
 {
     glTexCoord4f(get<0>(tex), get<1>(tex), get<2>(tex), get<3>(tex));
 }
-void glpp::texture_coordinate(const texture_coordinate4&& tex) noexcept
+void glpp::texture_coordinate(const glpp::float_vector4&& tex) noexcept
 {
     glTexCoord4f(get<0>(tex), get<1>(tex), get<2>(tex), get<3>(tex));
 }

@@ -1,32 +1,24 @@
-#ifndef SRC_UTIL_VECTOR_HPP
-#define SRC_UTIL_VECTOR_HPP
+#ifndef GLPP_SRC_UTIL_VECTOR_HPP
+#define GLPP_SRC_UTIL_VECTOR_HPP
 
-#include <exception>
+#include <algorithm>
+#include <stdexcept>
 
 namespace glpp
 {
     //==========================================================================
-    //Forward declarations.
-    template<std::size_t, typename>
-    class vector_base;
-    //==========================================================================
-    //Using.
-    template<std::size_t Size, typename T>
-    using vector = vector_base<Size, T>;
-    //==========================================================================
     //Classes.
     /**
-     * The <code>glpp::vector_base</code> class provides basic functionality of
-     * vector-like data types.
+     * The vector_base class provides basic functionality of vector-like
+     * data types.
      *
      * <p>
-     * <code>glpp::vector_base</code> restricts types to only contain
-     * fundamental data types.
+     * vector_base restricts types to only contain fundamental data types.
      * </p>
      *
-     * @param Size The number of elements which can be held by
-     *              <code>glpp::vector_base</code>.
-     * @param T The type of the elements within <code>glpp::vector_base</code>.
+     * @brief A vector of predefined size which can store fundamental types.
+     * @param Size The number of elements which can be held by vector_base.
+     * @param T The type of the elements within vector_base.
      */
     template<std::size_t Size, typename T>
     class vector_base final
@@ -44,68 +36,64 @@ namespace glpp
         //======================================================================
         //Typedefs.
         /**
-         * The value type in <code>this</code> <code>glpp::vector_base</code>.
+         * @brief The value type in the vector_base.
          */
         typedef T value_type;
         /**
-         * The const value type in <code>this</code>
-         * <code>glpp::vector_base</code>.
+         * @brief The const value type in the vector_base.
          */
         typedef const value_type const_value_type;
         /**
-         * The pointer to the value type in <code>this</code>
-         * <code>glpp::vector_base</code>.
+         * @brief The pointer to the value type in the vector_base.
          */
         typedef value_type* iterator;
         /**
-         * The const pointer to the value type in <code>this</code>
-         * <code>glpp::vector_base</code>.
+         * @brief The const pointer to the value type in the vector_base.
          */
         typedef const_value_type* const_iterator;
         /**
-         * The reference to the value type in <code>this</code>
-         * <code>glpp::vector_base</code>.
+         * @brief The reference to the value type in the vector_base.
          */
         typedef value_type& value_type_ref;
         /**
-         * The const reference to the value type in <code>this</code>
-         * <code>glpp::vector_base</code>.
+         * @brief The const reference to the value type in the vector_base.
          */
         typedef const_value_type& const_value_type_ref;
         //======================================================================
         //Static members.
         /**
-         * The c string which contains an error message for when attempting to
+         * The C-string which contains an error message for when attempting to
          * access an element at an index which exceeds the size of the vector.
+         *
+         * @brief The error message for when accessing an out of range element.
          */
         static constexpr const char* OUT_OF_RANGE_MESSAGE =
                 "Index out of range";
         //======================================================================
         //Members.
         /**
-         * The pointer to the array of elements in the
-         * <code>glpp::vector_base</code>.
+         * @brief The pointer to the array of elements in the vector_base.
          */
         value_type elements_[Size];
         //======================================================================
         //Constructors.
     public:
         /**
-         * Initialise a <code>glpp::vector_base</code> with predefined values.
+         * Initialise a vector_base with predefined values.
          *
          * <p>
-         * If attempting to initialize the <code>glpp::vector_base</code> with
-         * more elements that the vector can contain, then compilation will
+         * If attempting to initialize the vector_base with more elements that
+         * the vector can contain, then compilation will
          * fail.
          * </p>
          *
          * <p>
-         * Providing the <code>glpp::vector</code> with fewer elements that
-         * the specified size, the remaining elements will be initialized with
-         * a default value.
+         * Providing the vector with fewer elements that the specified size,
+         * the remaining elements will be initialized with a default value.
          * </p>
          *
-         * @param Ts The variadic template type.
+         * @brief Construct a vector_base by defining the elements to be
+         *              contained.
          * @param elements The parameter pack containing the initial values of
          *                  the vector.
          */
@@ -115,20 +103,15 @@ namespace glpp
         {
         }
         /**
-         * Copy constructor.
+         * Creates a vector_base which is exactly equal to another vector_base.
          *
          * <p>
-         * Creates a <code>glpp::vector_base</code> which is exactly equal to
-         * another <code>glpp::vector_base</code>.
+         * Copy each the elements inside the original vector_base into a newly
+         * created vector_base.
          * </p>
          *
-         * <p>
-         * Copy each the elements inside the original
-         * <code>glpp::vector_base</code> into a newly created
-         * <code>glpp::vector_base</code>.
-         * </p>
-         *
-         * @param orig The original <code>glpp::vector_base</code> to be copied.
+         * @brief Copy constructor.
+         * @param orig The original vector_base to be copied.
          */
         vector_base(const vector_base<Size, T>& orig)
         {
@@ -145,7 +128,7 @@ namespace glpp
         //======================================================================
         //Destructor.
         /**
-         * Destroy the <code>glpp::vector_base</code>.
+         * @brief Destroy the vector_base.
          */
         ~vector_base() noexcept
         {
@@ -153,57 +136,58 @@ namespace glpp
         //======================================================================
         //Member operators.
         /**
-         * Get the size of <code>this</code> <code>glpp::vector_base</code>.
+         * Get the size of this vector_base.
          *
-         * @return The number of elements in <code>this</code>.
+         * @brief Get the number of elements in this vector_base.
+         * @return The number of elements in this.
          */
         constexpr std::size_t size() const noexcept
         {
             return Size;
         }
         /**
-         * Get the beginning of <code>this</code>
-         * <code>glpp::vector_base</code>.
+         * Get the beginning of this vector_base.
          *
-         * @return The iterator to the first element of <code>this</code>.
+         * @brief Get the iterator to the first element.
+         * @return The iterator to the first element of this vector_base.
          */
         constexpr iterator begin() noexcept
         {
             return elements_;
         }
         /**
-         * Get the beginning of <code>this</code>
-         * <code>glpp::vector_base</code>.
+         * Get the beginning of this vector_base.
          *
          * <p>
          * <code>const</code> overload.
          * </p>
          *
-         * @return The iterator to the first element of <code>this</code>.
+         * @brief Get the const_iterator to the first element.
+         * @return The iterator to the first element of this vector_base.
          */
         constexpr const_iterator begin() const noexcept
         {
             return elements_;
         }
         /**
-         * Get the end of <code>this</code>
-         * <code>glpp::vector_base</code>.
+         * Get the end of this vector_base.
          *
-         * @return The iterator to the end of <code>this</code>.
+         * @brief Get the iterator which marks the end.
+         * @return The iterator to the end of this vector_base.
          */
         constexpr iterator end() noexcept
         {
             return begin() + Size;
         }
         /**
-         * Get the end of <code>this</code>
-         * <code>glpp::vector_base</code>.
+         * Get the end of this vector_base.
          *
          * <p>
          * <code>const</code> overload.
          * </p>
          *
-         * @return The iterator to the end of <code>this</code>.
+         * @brief Get the const_iterator which marks the end.
+         * @return The iterator to the end of this vector_base.
          */
         constexpr const_iterator end() const noexcept
         {
@@ -212,14 +196,11 @@ namespace glpp
         //======================================================================
         //Member operators.
         /**
-         * Copy assignment.
+         * Copy all the elements of one vector_base into
+         * this vector_base. All the current values will be over-written.
          *
-         * <p>
-         * Copy all the elements of one <code>glpp::vector_base</code> into
-         * <code>this</code>. All the current values will be over-written.
-         * </p>
-         *
-         * @return <code>this</code> after the operation.
+         * @brief Copy assignment.
+         * @return this vector_base after the operation.
          */
         vector_base<Size, value_type>& operator= (
                 const vector_base<Size, value_type>& orig)
@@ -235,12 +216,13 @@ namespace glpp
                 const vector_base<Size, value_type>&& orig) = delete;
         /**
          * Get the element at a given index within <code>this</code>
-         * <code>glpp::vector_base</code> by reference.
+         * vector_base by reference.
          *
+         * @brief Get the element at a specified position.
          * @param index The index of the element to be retrieved.
          * @return The reference to the element at the <code>index</code>.
          * @throw std::out_of_range If <code>index</code> is equal to or greater
-         *          than <code>size</code>.
+         *          than the size of the vector_base.
          */
         value_type_ref operator[] (const std::size_t index)
         {
@@ -249,19 +231,19 @@ namespace glpp
             throw std::out_of_range(OUT_OF_RANGE_MESSAGE);
         }
         /**
-         * Get the element at a given index within <code>this</code>
-         * <code>glpp::vector_base</code> by <code>const</code> value.
+         * Get the element at a given index within this vector_base by value.
          *
          * <p>
          * <code>const</code> overload.
          * </p>
          *
+         * @brief Get the element at a specified position.
          * @param index The index of the element to be retrieved.
          * @return The reference to the element at the <code>index</code>.
          * @throw std::out_of_range If <code>index</code> is equal to or greater
-         *          than <code>size</code>.
+         *          than the size of the vector_base.
          */
-        const_value_type operator[] (const std::size_t index) const
+        value_type operator[] (const std::size_t index) const
         {
             if(index < Size)
                 return elements_[index];
@@ -271,21 +253,18 @@ namespace glpp
     //==========================================================================
     //Functions.
     /**
-     * Compile time get function, which can retrieve elements from a
-     * <code>glpp::vector_base</code> by value.
+     * Compile time get function, which can retrieve elements from a vector_base
+     * by value.
      *
      * <p>
      * Attempting to access a value outside the range of the vector will result
      * in failure to compile.
      * </p>
      *
-     * @param Index The index of the element.
-     * @param Size The size of the <code>glpp::vector_base</code>.
-     * @param T The type contained within <code>glpp::vector_base</code>.
-     * @param vect The <code>glpp::vector_base</code> to retrieve the element
-     *              from.
-     * @return The value of the <code>glpp::vector_base</code> at
-     *          <code>Index</code>.
+     * @brief Get the element at a given position in the vector_base.
+     * @param vect The reference to the vector_base to retrieve the element
+     *          from.
+     * @return The value of the vector_base at <code>Index</code>.
      */
     template<std::size_t Index, std::size_t Size, typename T>
     constexpr T get(const vector_base<Size, T>& vect) noexcept
@@ -295,4 +274,4 @@ namespace glpp
     }
 } //glpp
 
-#endif //SRC_UTIL_VECTOR_HPP
+#endif //GLPP_SRC_UTIL_VECTOR_HPP
