@@ -32,7 +32,7 @@ namespace glpp
      * @brief Rotation in 3d space around the x-axis.
      * @param angle The angle in degrees of the rotation.
      */
-    inline void rotate_x(const GLfloat angle) noexcept
+    inline void rotate_x(register const GLfloat angle) noexcept
     {
         glRotatef(angle, 1, 0, 0);
     }
