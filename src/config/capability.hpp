@@ -1,11 +1,5 @@
-/*
- * File:    capability.hpp
- * Author:  John Berg
- * Date:    29/10/2017
- */
-
-#ifndef CAPABILITY_HPP
-#define CAPABILITY_HPP
+#ifndef GLPP_SRC_CONFIG_CAPABILITY_HPP
+#define GLPP_SRC_CONFIG_CAPABILITY_HPP
 
 #include <GL/gl.h>
 #include "../util.hpp"
@@ -15,7 +9,7 @@ namespace glpp
     //==========================================================================
     //Enums.
     /**
-     * The available capabilities.
+     * @brief The available capabilities in OpenGL.
      */
     enum class capability: GLenum
     {
@@ -83,10 +77,11 @@ namespace glpp
     //==========================================================================
     //Functions.
     /**
-     * Enable a <code>glpp::capability</code>.
+     * This function is equivalent to glEnable(GLenum).
      *
+     * @brief Enable a capability.
      * @param cap The capability to be enabled.
-     * @throw glpp::error If OpenGL raises an error.
+     * @throw error If OpenGL raises an error.
      */
     inline void enable(capability cap)
     {
@@ -94,10 +89,11 @@ namespace glpp
         get_error();
     }
     /**
-     * Disable a <code>glpp::capability</code>.
+     * This function is equivalent to glDisable(GLenum).
      *
+     * @brief Disable a capability
      * @param cap The capability to be disabled.
-     * @throw glpp::error If OpenGL raises an error.
+     * @throw error If OpenGL raises an error.
      */
     inline void disable(capability cap)
     {
@@ -106,4 +102,4 @@ namespace glpp
     }
 } //glpp
 
-#endif //CAPABILITY_HPP
+#endif //GLPP_SRC_CONFIG_CAPABILITY_HPP

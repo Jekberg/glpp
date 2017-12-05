@@ -4,17 +4,17 @@ namespace glpp
 {
     //==========================================================================
     //Static fields.
-    const rgba_colour rgba_colour::RED      = rgba_colour(0xFF, 0x0,  0x0);
-    const rgba_colour rgba_colour::GREEN    = rgba_colour(0x0,  0xFF, 0x0);
-    const rgba_colour rgba_colour::BLUE     = rgba_colour(0x0,  0x0,  0xFF);
-    const rgba_colour rgba_colour::BLACK    = rgba_colour(0x0,  0x0,  0x0);;
-    const rgba_colour rgba_colour::WHITE    = rgba_colour(0xFF, 0xFF, 0xFF);
-    const rgba_colour rgba_colour::CYAN     = rgba_colour(0x0,  0xFF, 0xFF);
-    const rgba_colour rgba_colour::PURPLE   = rgba_colour(0xFF, 0x0,  0xFF);
-    const rgba_colour rgba_colour::YELLOW   = rgba_colour(0xFF, 0xFF, 0x0);
+    const colour colour::RED      = colour(0xFF, 0x0,  0x0);
+    const colour colour::GREEN    = colour(0x0,  0xFF, 0x0);
+    const colour colour::BLUE     = colour(0x0,  0x0,  0xFF);
+    const colour colour::BLACK    = colour(0x0,  0x0,  0x0);;
+    const colour colour::WHITE    = colour(0xFF, 0xFF, 0xFF);
+    const colour colour::CYAN     = colour(0x0,  0xFF, 0xFF);
+    const colour colour::PURPLE   = colour(0xFF, 0x0,  0xFF);
+    const colour colour::YELLOW   = colour(0xFF, 0xFF, 0x0);
     //==========================================================================
     //Destructors.
-    rgba_colour::~rgba_colour() noexcept
+    colour::~colour() noexcept
     {
     }
 } //glpp

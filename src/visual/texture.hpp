@@ -18,24 +18,31 @@ namespace glpp
     //==========================================================================
     //Forward declarations.
     /**
+     * A texture object contains both the texture_mode and the id which
+     * identifies the texture. A texture may be moved but not copied.
+     *
+     * @brief Encapsulation of textures which are used by OpenGL.
      */
     class texture final
     {
         //======================================================================
         //Friends.
+    private:
         template<typename F>
-        friend texture load_texture(const std::string&, GLenum, F load_strategy)
+        friend texture load_texture(
+                const std::string&,
+                texture_mode,
+                F load_strategy)
         noexcept(noexcept(load_strategy("", 0, 0)));
         friend void submit(const texture&);
         //======================================================================
         //Static members.
-    private:
         /**
-         * The size of how many textures to generate.
+         * @brief The size of how many textures to generate.
          */
         static const GLuint SIZE;
         /**
-         * The numeric value representing the an invalid texture.
+         * @brief The numeric value representing the an invalid texture.
          */
         static constexpr const GLuint NO_TEXTURE = 0;
         /**
@@ -46,18 +53,20 @@ namespace glpp
         //======================================================================
         //Members.
         /**
-         *
+         * @brief The GLenum representing the texture mode.
          */
         GLenum target_;
         /**
-         * The numeric value which represents this texture.
+         * @brief The numeric value which represents this texture.
          */
         GLuint handle_;
         //======================================================================
         //Constructors.
     public:
         /**
+         * The texture constructed will be GL_TEXTURE_2D and invalid.
          *
+         * @brief The default constructor.
          */
         constexpr texture() noexcept:
                 target_(GL_TEXTURE_2D),
@@ -65,11 +74,14 @@ namespace glpp
         {
         }
         /**
+         * Constructing a texture will generate a texture.
          *
-         * @param target
+         * @brief Create a texture with a specific texture_mode.
+         * @param target The texture_mode which will be used in this texture.
+         * @throw error If generating a texture fails.
          */
-        inline texture(GLenum target):
-                target_(target)
+        inline texture(texture_mode target):
+                target_(static_cast<GLenum>(target))
         {
             glGenTextures(SIZE, &handle_);
             get_error();
@@ -79,9 +91,12 @@ namespace glpp
          */
         texture(const texture&) = delete;
         /**
+         * Move a texture into a newly constructed texture by copying the
+         * texture_mode and texture id of the original texture, then setting
+         * the original texture to contain no list.
          *
-         * @param The rvalue reference to the <code>glpp::texture</code> to be
-         *       moved
+         * @brief Move constructor.
+         * @param The rvalue reference to the texture to be moved
          */
         texture(texture&& orig):
                 target_(orig.target_),
@@ -92,14 +107,18 @@ namespace glpp
         //======================================================================
         //Destructor.
         /**
-         * Destroy the <code>glpp::texture</code> and free the resource.
+         * Destroy the texture and free the resource.
+         *
+         * @brief Delete the texture.
          */
         ~texture() noexcept;
         //======================================================================
         //Member functions
     private:
         /**
+         * A texture will only be released if a texture id is present.
          *
+         * @brief Release the texture contained in this.
          */
         inline void release() noexcept
         {
@@ -115,17 +134,19 @@ namespace glpp
          */
         texture operator= (const texture&) = delete;
         /**
+         * Before moving the original texture into this, first the resources in
+         * this texture will be released, then the texture_mode and id from the
+         * original texture will be copied, then the texture id of the original
+         * will be set to contain no texture.
          *
-         *
+         * @brief Move assignment.
+         * @param orig The rvalue reference to the texture to move into this
+         *          texture.
          */
         texture& operator= (texture&& orig) noexcept;
     };
     /**
-     * Load a texture.
-     *
-     * <p>
      * A callback must be provided to help the set up of the texture.
-     * </p>
      *
      * <p>
      * If the <code>load_strategy</code> may throw, then this function may also
@@ -133,17 +154,17 @@ namespace glpp
      * will this function.
      * </p>
      *
+     * @brief Load a texture into a texture object.
      * @param filename The reference to a string representing the name of the
      *          file to be loaded.
      * @param target The type of texture to be loaded.
      * @param A function which defines the strategy of loading the textures.
-     * @return A <code>glpp::texture</code> object representing the loaded
-     *          texture.
+     * @return A texture object representing the loaded texture.
      */
     template<typename F>
     texture load_texture(
                          const std::string& filename,
-                         GLenum target,
+                         texture_mode target,
                          F load_strategy)
                          noexcept(noexcept(load_strategy("", 0, 0)))
     {
@@ -152,8 +173,7 @@ namespace glpp
         return tex;
     }
     /**
-     * Bind the texture for drawing.
-     *
+     * @brief Bind the texture for drawing.
      * @param tex The reference to the texture to bind for drawing.
      * @throw std::invalid_argument If <code>tex</code> is an invalid texture.
      */

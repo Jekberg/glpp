@@ -1,43 +1,23 @@
-/* 
- * File:    depth_.hpp
- * Author:  John Berg
- * Date:    29/10/2017
- */
-
-#ifndef DEPTH_HPP
-#define DEPTH_HPP
+#ifndef GLPP_SRC_CONFIG_DEPTH_HPP
+#define GLPP_SRC_CONFIG_DEPTH_HPP
 
 #include <GL/gl.h>
+#include "../util.hpp"
 
 namespace glpp
 {
     //==========================================================================
-    //Enums.
-    /**
-     * The depth comparison functions available.
-     */
-    enum class comparision: GLenum
-    {
-        NEVER       = GL_NEVER,
-        LESS        = GL_LESS,
-        EQUAL       = GL_EQUAL,
-        LEQUAL      = GL_LEQUAL,
-        GREATER     = GL_GREATER,
-        NOTEQUAL    = GL_NOTEQUAL,
-        GEQUAL      = GL_GEQUAL,
-        ALWAYS      = GL_ALWAYS
-    };
-    //==========================================================================
     //Functions.
     /**
-     * Specify the depth buffer comparison.
-     * 
-     * @param mode The <code>glpp::comparison</code> function.
+     * This function is equivalent to glDepthFunc(GLenum).
+     *
+     * @brief Specify the depth buffer comparison.
+     * @param mode The comparison_mode function.
      */
-    inline void depth_comparision(comparision mode)
+    inline void depth_comparision(comparision_mode mode)
     {
-        glDepthFunc((GLenum) mode);
+        glDepthFunc(static_cast<GLenum>(mode));
     }
 } //glpp
 
-#endif //DEPTH_HPP
+#endif //GLPP_SRC_CONFIG_DEPTH_HPP

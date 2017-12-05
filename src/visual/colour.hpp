@@ -1,9 +1,3 @@
-/*
- * File:    colour.hpp
- * Author:  John
- * Date:    27/10/2017
- */
-
 #ifndef COLOUR_HPP
 #define COLOUR_HPP
 
@@ -13,67 +7,61 @@
 namespace glpp
 {
     //==========================================================================
-    //Forward declarations.
-    class rgba_colour;
-    //==========================================================================
-    //Typedefs.
-    /**
-     * Alias of <code>glpp::rgba_colour</code>.
-     */
-    typedef rgba_colour colour;
-    //==========================================================================
     //Classes.
     /**
+     * The colour class is an abstraction of the RGBA format which is intended
+     * for usage in OpenGL.
      *
+     * @brief Colour for usage in OpenGL.
      */
-    class rgba_colour
+    class colour
     {
+    private:
         //======================================================================
         //Typedefs.
-    private:
         /**
-         * The value type used by the <code>glpp::rgba_colour</code>.
+         * The value type used by the colour.
          */
         typedef GLubyte value_type;
         //======================================================================
         //Friends.
-        friend void submit(const rgba_colour &) noexcept;
-        friend void submit(const rgba_colour &&) noexcept;
+        friend void submit(const colour&) noexcept;
+        friend void submit(const colour&&) noexcept;
     public:
         //======================================================================
         //Static members.
         /**
          * The colour black.
          */
-        const static rgba_colour BLACK;
+        const static colour BLACK;
         /**
          * The colour white.
          */
-        const static rgba_colour WHITE;
+        const static colour WHITE;
         /**
          * The colour red.
          */
-        const static rgba_colour RED;
+        const static colour RED;
         /**
          * The colour green.
          */
-        const static rgba_colour GREEN;
+        const static colour GREEN;
         /**
          * The colour blue.
          */
-        const static rgba_colour BLUE;
+        const static colour BLUE;
         /**
          * The colour cyan.
          */
-        const static rgba_colour CYAN;
+        const static colour CYAN;
         /**
          * The colour yellow.
          */
-        const static rgba_colour YELLOW;
+        const static colour YELLOW;
         /**
          * The colour purple.
          */
-        const static rgba_colour PURPLE;
+        const static colour PURPLE;
         //======================================================================
         //Members.
     private:
@@ -99,17 +87,18 @@ namespace glpp
         /**
          * Deleted.
          */
-        rgba_colour() = delete;
+        colour() = delete;
         /**
-         * Create a <code>glpp::rgba_colour</code> by specifying the values
-         * of red, green, blue and alpha.
+         * Create a colour by specifying the values of red, green, blue and
+         * alpha.
          *
+         * @brief Create a colour with a red, green, blue and aplpha value.
          * @param red The red value.
          * @param green The green value.
          * @param blue The blue value.
          * @param alpha The alpha value, 0xFF by default.
          */
-        constexpr explicit rgba_colour(
+        constexpr explicit colour(
                 const value_type red,
                 const value_type green,
                 const value_type blue,
@@ -124,27 +113,25 @@ namespace glpp
         //======================================================================
         //Destructors.
         /**
-         * Destroy the <code>glpp::rgba_colour</code>.
+         * @brief Delete the colour.
          */
-        ~rgba_colour() noexcept;
+        ~colour() noexcept;
     };
     //==========================================================================
     //Functions.
     /**
-     * Submit a <code>glpp::rgba_colour</code> to OpenGL.
-     *
-     * @param col The reference to the <code>glpp::rgba_colour</code>.
+     * @brief Submit a colour to OpenGL.
+     * @param col The reference to the colour.
      */
-    inline void submit(const rgba_colour & col) noexcept
+    inline void submit(const colour& col) noexcept
     {
         glColor4ub(col.red_, col.green_, col.blue_, col.alpha_);
     }
     /**
-     * Submit a <code>glpp::rgba_colour</code> to OpenGL.
-     *
-     * @param col The rvalue reference to the <code>glpp::rgba_colour</code>.
+     * @brief Submit a colour to OpenGL.
+     * @param col The rvalue reference to the colour.
      */
-    inline void submit(const rgba_colour && col) noexcept
+    inline void submit(const colour&& col) noexcept
     {
         glColor4ub(col.red_, col.green_, col.blue_, col.alpha_);
     }

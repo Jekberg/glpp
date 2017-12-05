@@ -15,8 +15,6 @@ namespace glpp
 {
     /**
      * @brief The error codes which can be raised by OpenGL.
-     *
-     * Each enum value corresponds to a @typedef GLenum.
      */
     enum class error_code: GLenum
     {
@@ -28,15 +26,12 @@ namespace glpp
         OUT_OF_MEMORY           = GL_OUT_OF_MEMORY
     };
     //==========================================================================
-    //Classes and structs.
+    //Classes.
     /**
-     * The <code>glpp::error</code> is a wrapper class for the
-     * <code>glpp::error_code</code>.
+     * The error provides utility for getting C0string representations of
+     * errors raised by OpenGL.
      *
-     * <p>
-     * The <code>glpp::error</code> also provides utility for getting c string
-     * representations of errors raised by OpenGL.
-     * </p>
+     * @brief The error is a wrapper class for the error_code.
      */
     class error final: public std::exception
     {
@@ -57,26 +52,24 @@ namespace glpp
         /**
          * Create an error object with an error_code that was raised by OpenGL.
          *
+         * @brief Wrap an error_code in an error.
          * @param code The error_code which was raised.
          */
         explicit error(const error_code code) noexcept;
         /**
-         * @brief Copy constructor.
-         *
-         * <p>
          * Create an error by copying an existing error object, so that the
          * newly created error contains the same error_code.
-         * </p>
          *
+         * @brief Copy constructor.
          * @param orig The reference to the original error object to be copied.
          */
         error(const error& orig) noexcept;
         //======================================================================
         //Destructors.
         /**
-         * @brief Destructor.
-         *
          * Destroy the error.
+         *
+         * @brief Destructor.
          */
         virtual ~error();
         //======================================================================
@@ -90,29 +83,29 @@ namespace glpp
             return code_;
         }
         /**
-         * @brief Get the string representation of the error.
-         *
-         * Get the c string message which describes the cause of the exception.
+         * Get the C-string message which describes the cause of the exception.
          *
          * <p>
-         * Using gluErrorString(GLenum) to get the c string.
+         * Using gluErrorString(GLenum) to get the C-string.
          * </p>
          *
-         * @return The c string error message.
+         * @brief Get the string representation of the error.
+         * @return The C-string error message.
          */
-        virtual const char * what() const throw() override;
+        virtual const char* what() const throw() override;
     };
     //==========================================================================
     //Functions.
     /**
      * Check if an error has been raised by OpenGL, then wrap the raised error
-     * in with a <code>glpp::error</code> and throw it.
+     * in with an error and throw it.
      *
      * <p>
      * If no errors are raised, then this function does nothing.
      * </p>
      *
-     * @throw glpp::error If OpenGL raises an error.
+     * @brief Check if OpenGL has raised an error.
+     * @throw error If OpenGL raises an error.
      */
     void get_error();
 } //glpp
