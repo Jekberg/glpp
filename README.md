@@ -1,1 +1,1 @@
-A C++ static library which provides an abstraction layer over the OpenGL API for.
+glpp is a C++ static library which provides an abstraction layer over a subset of the OpenGL API.
