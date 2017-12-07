@@ -1,0 +1,13 @@
+digraph "glpp::texture::texture"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="glpp::texture::texture",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="glpp::get_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceglpp.html#a40e9dba1fac476445cacac9d524fa623",tooltip="Check if OpenGL has raised an error. "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="glpp::error::error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classglpp_1_1error.html#aca53147c703f90cced018e8592ef28ea"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="glpp::texture::texture",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classglpp_1_1texture.html#a185be01a6e7167e5fc8797df2fa927d3",tooltip="The default constructor. "];
+}
