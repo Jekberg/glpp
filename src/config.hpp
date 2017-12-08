@@ -3,6 +3,5 @@
 
 #include "config/capability.hpp"
 #include "config/depth.hpp"
-#include "config/clear.hpp"
 
 #endif //GLPP_SRC_CONFIG_HPP
