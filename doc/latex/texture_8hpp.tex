@@ -1,0 +1,23 @@
+\hypertarget{texture_8hpp}{}\section{D\+:/\+Development/\+G\+I\+T/glpp/src/visual/texture.hpp File Reference}
+\label{texture_8hpp}\index{D\+:/\+Development/\+G\+I\+T/glpp/src/visual/texture.\+hpp@{D\+:/\+Development/\+G\+I\+T/glpp/src/visual/texture.\+hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$G\+L/gl.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../util.\+hpp\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classglpp_1_1texture}{glpp\+::texture}
+\begin{DoxyCompactList}\small\item\em Encapsulation of textures which are used by Open\+GL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceglpp}{glpp}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename F $>$ }\\texture \hyperlink{namespaceglpp_a0ed53f477ba84e11e621381832f7bf41}{glpp\+::load\+\_\+texture} (const std\+::string \&filename, texture\+\_\+mode target, F load\+\_\+strategy) noexcept(noexcept(load\+\_\+strategy(\char`\"{}\char`\"{}, 0, 0)))
+\begin{DoxyCompactList}\small\item\em Load a texture into a texture object. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceglpp_a0f22518667f7fad612bc6cf731c83580}{glpp\+::submit} (const texture \&tex)
+\begin{DoxyCompactList}\small\item\em Bind the texture for drawing. \end{DoxyCompactList}\end{DoxyCompactItemize}

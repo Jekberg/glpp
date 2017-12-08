@@ -1,5 +1,5 @@
-#ifndef COLOUR_HPP
-#define COLOUR_HPP
+#ifndef GLPP_SRC_VISUAL_COLOUR_HPP
+#define GLPP_SRC_VISUAL_COLOUR_HPP
 
 #include <GL/gl.h>
 #include "../util.hpp"
@@ -137,4 +137,4 @@ namespace glpp
     }
 } //glpp
 
-#endif //COLOUR_HPP
+#endif //GLPP_SRC_VISUAL_COLOUR_HPP

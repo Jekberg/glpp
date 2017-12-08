@@ -1,11 +1,5 @@
-/*
- * File:    texture.hpp
- * Author:  John Berg
- * Date:    03/11/2017
- */
-
-#ifndef TEXTURE_HPP
-#define TEXTURE_HPP
+#ifndef GLPP_SRC_VISUAL_TEXTURE_HPP
+#define GLPP_SRC_VISUAL_TEXTURE_HPP
 
 
 #include <iostream>
@@ -185,4 +179,4 @@ namespace glpp
     }
 } //glpp
 
-#endif //TEXTURE_HPP
+#endif //GLPP_SRC_VISUAL_TEXTURE_HPP

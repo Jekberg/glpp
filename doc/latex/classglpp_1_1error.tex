@@ -1,0 +1,151 @@
+\hypertarget{classglpp_1_1error}{}\section{glpp\+:\+:error Class Reference}
+\label{classglpp_1_1error}\index{glpp\+::error@{glpp\+::error}}
+
+
+The error is a wrapper class for the error\+\_\+code.  
+
+
+
+
+{\ttfamily \#include $<$error.\+hpp$>$}
+
+
+
+Inherits exception.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classglpp_1_1error_aca53147c703f90cced018e8592ef28ea}{error} ()=delete
+\item 
+\hyperlink{classglpp_1_1error_a622ee219a83b275ea965f74b55e277de}{error} (const \hyperlink{namespaceglpp_a1fe5e1dcc793337b3958e3cd2352432c}{error\+\_\+code} \hyperlink{classglpp_1_1error_a36c978058800d46310de3638be3f1ca6}{code}) noexcept
+\begin{DoxyCompactList}\small\item\em Wrap an error\+\_\+code in an error. \end{DoxyCompactList}\item 
+\hyperlink{classglpp_1_1error_a7ccd8e96ad2f93ac0ec7e3803edab882}{error} (const \hyperlink{classglpp_1_1error}{error} \&orig) noexcept
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classglpp_1_1error_a631399936338b9720b1938c8a8eee2a2}{$\sim$error} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{namespaceglpp_a1fe5e1dcc793337b3958e3cd2352432c}{error\+\_\+code} \hyperlink{classglpp_1_1error_a36c978058800d46310de3638be3f1ca6}{code} () const noexcept
+\begin{DoxyCompactList}\small\item\em Get the error\+\_\+code from this error. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \hyperlink{classglpp_1_1error_aa8a4425f1cc890c40a9992fe883cf3bc}{what} () const override  throw ()
+\begin{DoxyCompactList}\small\item\em Get the string representation of the error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The error is a wrapper class for the error\+\_\+code. 
+
+The error provides utility for getting C0string representations of errors raised by Open\+GL. 
+
+Definition at line 30 of file error.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglpp_1_1error_aca53147c703f90cced018e8592ef28ea}\label{classglpp_1_1error_aca53147c703f90cced018e8592ef28ea}} 
+\index{glpp\+::error@{glpp\+::error}!error@{error}}
+\index{error@{error}!glpp\+::error@{glpp\+::error}}
+\subsubsection{\texorpdfstring{error()}{error()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily glpp\+::error\+::error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Deleted. \mbox{\Hypertarget{classglpp_1_1error_a622ee219a83b275ea965f74b55e277de}\label{classglpp_1_1error_a622ee219a83b275ea965f74b55e277de}} 
+\index{glpp\+::error@{glpp\+::error}!error@{error}}
+\index{error@{error}!glpp\+::error@{glpp\+::error}}
+\subsubsection{\texorpdfstring{error()}{error()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily glpp\+::error\+::error (\begin{DoxyParamCaption}\item[{const \hyperlink{namespaceglpp_a1fe5e1dcc793337b3958e3cd2352432c}{error\+\_\+code}}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+Wrap an error\+\_\+code in an error. 
+
+Create an error object with an error\+\_\+code that was raised by Open\+GL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The error\+\_\+code which was raised. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file error.\+cpp.
+
+\mbox{\Hypertarget{classglpp_1_1error_a7ccd8e96ad2f93ac0ec7e3803edab882}\label{classglpp_1_1error_a7ccd8e96ad2f93ac0ec7e3803edab882}} 
+\index{glpp\+::error@{glpp\+::error}!error@{error}}
+\index{error@{error}!glpp\+::error@{glpp\+::error}}
+\subsubsection{\texorpdfstring{error()}{error()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily glpp\+::error\+::error (\begin{DoxyParamCaption}\item[{const \hyperlink{classglpp_1_1error}{error} \&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Copy constructor. 
+
+Create an error by copying an existing error object, so that the newly created error contains the same error\+\_\+code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & The reference to the original error object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file error.\+cpp.
+
+\mbox{\Hypertarget{classglpp_1_1error_a631399936338b9720b1938c8a8eee2a2}\label{classglpp_1_1error_a631399936338b9720b1938c8a8eee2a2}} 
+\index{glpp\+::error@{glpp\+::error}!````~error@{$\sim$error}}
+\index{````~error@{$\sim$error}!glpp\+::error@{glpp\+::error}}
+\subsubsection{\texorpdfstring{$\sim$error()}{~error()}}
+{\footnotesize\ttfamily glpp\+::error\+::$\sim$error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+Destroy the error. 
+
+Definition at line 20 of file error.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglpp_1_1error_a36c978058800d46310de3638be3f1ca6}\label{classglpp_1_1error_a36c978058800d46310de3638be3f1ca6}} 
+\index{glpp\+::error@{glpp\+::error}!code@{code}}
+\index{code@{code}!glpp\+::error@{glpp\+::error}}
+\subsubsection{\texorpdfstring{code()}{code()}}
+{\footnotesize\ttfamily \hyperlink{namespaceglpp_a1fe5e1dcc793337b3958e3cd2352432c}{error\+\_\+code} glpp\+::error\+::code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the error\+\_\+code from this error. 
+
+\begin{DoxyReturn}{Returns}
+The error\+\_\+code which was raised. 
+\end{DoxyReturn}
+
+
+Definition at line 75 of file error.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1error_aa8a4425f1cc890c40a9992fe883cf3bc}\label{classglpp_1_1error_aa8a4425f1cc890c40a9992fe883cf3bc}} 
+\index{glpp\+::error@{glpp\+::error}!what@{what}}
+\index{what@{what}!glpp\+::error@{glpp\+::error}}
+\subsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char $\ast$ glpp\+::error\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const throw  ) \hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the string representation of the error. 
+
+Get the C-\/string message which describes the cause of the exception.
+
+Using glu\+Error\+String(\+G\+Lenum) to get the C-\/string. 
+
+\begin{DoxyReturn}{Returns}
+The C-\/string error message. 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file error.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Development/\+G\+I\+T/glpp/src/util/\hyperlink{error_8hpp}{error.\+hpp}\item 
+D\+:/\+Development/\+G\+I\+T/glpp/src/util/src/\hyperlink{error_8cpp}{error.\+cpp}\end{DoxyCompactItemize}

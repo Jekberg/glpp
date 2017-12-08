@@ -2,7 +2,6 @@ var searchData=
 [
   ['capability',['capability',['../namespaceglpp.html#a1b0f7d2f17d11ae11a12d44571612832',1,'glpp']]],
   ['capability_2ehpp',['capability.hpp',['../capability_8hpp.html',1,'']]],
-  ['clear_2ehpp',['clear.hpp',['../clear_8hpp.html',1,'']]],
   ['clip_5fplane0',['CLIP_PLANE0',['../namespaceglpp.html#a1b0f7d2f17d11ae11a12d44571612832a4932be75aaa1eaf8f060ece124f57fe9',1,'glpp']]],
   ['clip_5fplane1',['CLIP_PLANE1',['../namespaceglpp.html#a1b0f7d2f17d11ae11a12d44571612832a05655d948a53df5b0eab1a0117abaa2d',1,'glpp']]],
   ['clip_5fplane2',['CLIP_PLANE2',['../namespaceglpp.html#a1b0f7d2f17d11ae11a12d44571612832a78508bb6632ee0da84bfdd6b449a01d7',1,'glpp']]],

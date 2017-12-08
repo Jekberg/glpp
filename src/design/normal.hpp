@@ -1,9 +1,3 @@
-/*
- * File:    normal.hpp
- * Author:  John Berg
- * Date:    03/11/2017
- */
-
 #ifndef GLPP_SRC_DESIGN_NORMAL_HPP
 #define GLPP_SRC_DESIGN_NORMAL_HPP
 

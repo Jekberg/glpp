@@ -1,0 +1,356 @@
+\hypertarget{classglpp_1_1vector__base}{}\section{glpp\+:\+:vector\+\_\+base$<$ Size, T $>$ Class Template Reference}
+\label{classglpp_1_1vector__base}\index{glpp\+::vector\+\_\+base$<$ Size, T $>$@{glpp\+::vector\+\_\+base$<$ Size, T $>$}}
+
+
+A vector of predefined size which can store fundamental types.  
+
+
+
+
+{\ttfamily \#include $<$vector.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Ts$>$ }\\constexpr \hyperlink{classglpp_1_1vector__base_a0345201763018059c125bdea2e98685d}{vector\+\_\+base} (const Ts \&\&... elements)
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} by defining the elements to be contained. \end{DoxyCompactList}\item 
+\hyperlink{classglpp_1_1vector__base_a9db979f6c03649746213794d289189bf}{vector\+\_\+base} (const \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$ Size, T $>$ \&orig)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classglpp_1_1vector__base_af7bae140051531bc4905f8059ca7c22e}{vector\+\_\+base} (\hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$ Size, T $>$ \&\&orig)=delete
+\item 
+\hyperlink{classglpp_1_1vector__base_aa739db55ea041fd36860393ffa0c0650}{$\sim$vector\+\_\+base} () noexcept
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. \end{DoxyCompactList}\item 
+constexpr std\+::size\+\_\+t \hyperlink{classglpp_1_1vector__base_a51861a7d1ee8e050e60d804b1fdfa4b8}{size} () const noexcept
+\begin{DoxyCompactList}\small\item\em Get the number of elements in this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. \end{DoxyCompactList}\item 
+constexpr iterator \hyperlink{classglpp_1_1vector__base_af9bf222e1947fe23a560b7e7c8f574a4}{begin} () noexcept
+\begin{DoxyCompactList}\small\item\em Get the iterator to the first element. \end{DoxyCompactList}\item 
+constexpr const\+\_\+iterator \hyperlink{classglpp_1_1vector__base_aecc2185fb26c757f0ceeadcd256df992}{begin} () const noexcept
+\begin{DoxyCompactList}\small\item\em Get the const\+\_\+iterator to the first element. \end{DoxyCompactList}\item 
+constexpr iterator \hyperlink{classglpp_1_1vector__base_a67c0770dcf8747d0119b6c32974caa76}{end} () noexcept
+\begin{DoxyCompactList}\small\item\em Get the iterator which marks the end. \end{DoxyCompactList}\item 
+constexpr const\+\_\+iterator \hyperlink{classglpp_1_1vector__base_a684a3f97ac7edfe4ea265a505f70df74}{end} () const noexcept
+\begin{DoxyCompactList}\small\item\em Get the const\+\_\+iterator which marks the end. \end{DoxyCompactList}\item 
+\hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$ Size, value\+\_\+type $>$ \& \hyperlink{classglpp_1_1vector__base_a580690059c9ad00c8e4d715a904bb390}{operator=} (const \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$ Size, value\+\_\+type $>$ \&orig) noexcept
+\begin{DoxyCompactList}\small\item\em Copy assignment. \end{DoxyCompactList}\item 
+\hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$ Size, value\+\_\+type $>$ \& \hyperlink{classglpp_1_1vector__base_a4fbb93fbc43aa6fb332104aa039991b2}{operator=} (const \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$ Size, value\+\_\+type $>$ \&\&orig)=delete
+\item 
+value\+\_\+type\+\_\+ref \hyperlink{classglpp_1_1vector__base_aae72a315ce6ba266b7add4a43a531bb2}{operator\mbox{[}$\,$\mbox{]}} (const std\+::size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Get the element at a specified position. \end{DoxyCompactList}\item 
+value\+\_\+type \hyperlink{classglpp_1_1vector__base_a3b38ee9887188a71120db98da6795cd3}{operator\mbox{[}$\,$\mbox{]}} (const std\+::size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Get the element at a specified position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t Index, std\+::size\+\_\+t \+\_\+\+Size, typename \+\_\+T $>$ }\\constexpr \+\_\+T \hyperlink{classglpp_1_1vector__base_aaea1b1e4a7275fde6872c5c5395d11db}{get} (const \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$ \+\_\+\+Size, \+\_\+T $>$ \&) noexcept
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$std\+::size\+\_\+t Size, typename T$>$\newline
+class glpp\+::vector\+\_\+base$<$ Size, T $>$}
+
+A vector of predefined size which can store fundamental types. 
+
+The \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} class provides basic functionality of vector-\/like data types.
+
+\hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} restricts types to only contain fundamental data types. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Size} & The number of elements which can be held by \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. \\
+\hline
+{\em T} & The type of the elements within \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file vector.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglpp_1_1vector__base_a0345201763018059c125bdea2e98685d}\label{classglpp_1_1vector__base_a0345201763018059c125bdea2e98685d}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!vector\+\_\+base@{vector\+\_\+base}}
+\index{vector\+\_\+base@{vector\+\_\+base}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{vector\+\_\+base()}{vector\_base()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+template$<$typename... Ts$>$ \\
+constexpr \hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::\hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} (\begin{DoxyParamCaption}\item[{const Ts \&\&...}]{elements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} by defining the elements to be contained. 
+
+Initialise a \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} with predefined values.
+
+If attempting to initialize the \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} with more elements that the vector can contain, then compilation will fail. 
+
+Providing the vector with fewer elements that the specified size, the remaining elements will be initialized with a default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elements} & The parameter pack containing the initial values of the vector. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file vector.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1vector__base_a9db979f6c03649746213794d289189bf}\label{classglpp_1_1vector__base_a9db979f6c03649746213794d289189bf}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!vector\+\_\+base@{vector\+\_\+base}}
+\index{vector\+\_\+base@{vector\+\_\+base}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{vector\+\_\+base()}{vector\_base()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+\hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::\hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} (\begin{DoxyParamCaption}\item[{const \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$ Size, T $>$ \&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+Creates a \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} which is exactly equal to another \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}.
+
+Copy each the elements inside the original \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} into a newly created \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & The original \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 116 of file vector.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1vector__base_af7bae140051531bc4905f8059ca7c22e}\label{classglpp_1_1vector__base_af7bae140051531bc4905f8059ca7c22e}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!vector\+\_\+base@{vector\+\_\+base}}
+\index{vector\+\_\+base@{vector\+\_\+base}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{vector\+\_\+base()}{vector\_base()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+\hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::\hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} (\begin{DoxyParamCaption}\item[{\hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$ Size, T $>$ \&\&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Deleted. \mbox{\Hypertarget{classglpp_1_1vector__base_aa739db55ea041fd36860393ffa0c0650}\label{classglpp_1_1vector__base_aa739db55ea041fd36860393ffa0c0650}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!````~vector\+\_\+base@{$\sim$vector\+\_\+base}}
+\index{````~vector\+\_\+base@{$\sim$vector\+\_\+base}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{$\sim$vector\+\_\+base()}{~vector\_base()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+\hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::$\sim$\hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Destroy the \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. 
+
+
+
+Definition at line 133 of file vector.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglpp_1_1vector__base_af9bf222e1947fe23a560b7e7c8f574a4}\label{classglpp_1_1vector__base_af9bf222e1947fe23a560b7e7c8f574a4}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!begin@{begin}}
+\index{begin@{begin}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+constexpr iterator \hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the iterator to the first element. 
+
+Get the beginning of this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}.
+
+\begin{DoxyReturn}{Returns}
+The iterator to the first element of this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. 
+\end{DoxyReturn}
+
+
+Definition at line 154 of file vector.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1vector__base_aecc2185fb26c757f0ceeadcd256df992}\label{classglpp_1_1vector__base_aecc2185fb26c757f0ceeadcd256df992}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!begin@{begin}}
+\index{begin@{begin}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+constexpr const\+\_\+iterator \hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the const\+\_\+iterator to the first element. 
+
+Get the beginning of this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}.
+
+{\ttfamily const} overload. 
+
+\begin{DoxyReturn}{Returns}
+The iterator to the first element of this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. 
+\end{DoxyReturn}
+
+
+Definition at line 168 of file vector.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1vector__base_a67c0770dcf8747d0119b6c32974caa76}\label{classglpp_1_1vector__base_a67c0770dcf8747d0119b6c32974caa76}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!end@{end}}
+\index{end@{end}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+constexpr iterator \hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the iterator which marks the end. 
+
+Get the end of this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}.
+
+\begin{DoxyReturn}{Returns}
+The iterator to the end of this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. 
+\end{DoxyReturn}
+
+
+Definition at line 178 of file vector.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1vector__base_a684a3f97ac7edfe4ea265a505f70df74}\label{classglpp_1_1vector__base_a684a3f97ac7edfe4ea265a505f70df74}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!end@{end}}
+\index{end@{end}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+constexpr const\+\_\+iterator \hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the const\+\_\+iterator which marks the end. 
+
+Get the end of this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}.
+
+{\ttfamily const} overload. 
+
+\begin{DoxyReturn}{Returns}
+The iterator to the end of this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. 
+\end{DoxyReturn}
+
+
+Definition at line 192 of file vector.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1vector__base_a580690059c9ad00c8e4d715a904bb390}\label{classglpp_1_1vector__base_a580690059c9ad00c8e4d715a904bb390}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!operator=@{operator=}}
+\index{operator=@{operator=}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+\hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$Size, value\+\_\+type$>$\& \hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$ Size, value\+\_\+type $>$ \&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Copy assignment. 
+
+Copy all the elements of one \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} into this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. All the current values will be over-\/written.
+
+\begin{DoxyReturn}{Returns}
+this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} after the operation. 
+\end{DoxyReturn}
+
+
+Definition at line 205 of file vector.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1vector__base_a4fbb93fbc43aa6fb332104aa039991b2}\label{classglpp_1_1vector__base_a4fbb93fbc43aa6fb332104aa039991b2}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!operator=@{operator=}}
+\index{operator=@{operator=}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+\hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$Size, value\+\_\+type$>$\& \hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$ Size, value\+\_\+type $>$ \&\&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Deleted. \mbox{\Hypertarget{classglpp_1_1vector__base_aae72a315ce6ba266b7add4a43a531bb2}\label{classglpp_1_1vector__base_aae72a315ce6ba266b7add4a43a531bb2}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+value\+\_\+type\+\_\+ref \hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the element at a specified position. 
+
+Get the element at a given index within {\ttfamily this} \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} by reference.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the element to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reference to the element at the {\ttfamily index}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If {\ttfamily index} is equal to or greater than the size of the \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 227 of file vector.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1vector__base_a3b38ee9887188a71120db98da6795cd3}\label{classglpp_1_1vector__base_a3b38ee9887188a71120db98da6795cd3}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+value\+\_\+type \hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the element at a specified position. 
+
+Get the element at a given index within this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base} by value.
+
+{\ttfamily const} overload. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the element to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reference to the element at the {\ttfamily index}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If {\ttfamily index} is equal to or greater than the size of the \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 246 of file vector.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1vector__base_a51861a7d1ee8e050e60d804b1fdfa4b8}\label{classglpp_1_1vector__base_a51861a7d1ee8e050e60d804b1fdfa4b8}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!size@{size}}
+\index{size@{size}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+constexpr std\+::size\+\_\+t \hyperlink{classglpp_1_1vector__base}{glpp\+::vector\+\_\+base}$<$ Size, T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the number of elements in this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}. 
+
+Get the size of this \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}.
+
+\begin{DoxyReturn}{Returns}
+The number of elements in this. 
+\end{DoxyReturn}
+
+
+Definition at line 144 of file vector.\+hpp.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classglpp_1_1vector__base_aaea1b1e4a7275fde6872c5c5395d11db}\label{classglpp_1_1vector__base_aaea1b1e4a7275fde6872c5c5395d11db}} 
+\index{glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}!get@{get}}
+\index{get@{get}!glpp\+::vector\+\_\+base@{glpp\+::vector\+\_\+base}}
+\subsubsection{\texorpdfstring{get}{get}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t Size, typename T$>$ \\
+template$<$std\+::size\+\_\+t Index, std\+::size\+\_\+t \+\_\+\+Size, typename \+\_\+T $>$ \\
+constexpr \+\_\+T get (\begin{DoxyParamCaption}\item[{const \hyperlink{classglpp_1_1vector__base}{vector\+\_\+base}$<$ \+\_\+\+Size, \+\_\+T $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Development/\+G\+I\+T/glpp/src/util/\hyperlink{vector_8hpp}{vector.\+hpp}\end{DoxyCompactItemize}

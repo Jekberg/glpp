@@ -1,0 +1,197 @@
+\hypertarget{classglpp_1_1list}{}\section{glpp\+:\+:list Class Reference}
+\label{classglpp_1_1list}\index{glpp\+::list@{glpp\+::list}}
+
+
+A wrapper class around an Open\+GL display list.  
+
+
+
+
+{\ttfamily \#include $<$list.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classglpp_1_1list_adf35376b2885cf8a455cf0611b6a6df2}{list} () noexcept
+\begin{DoxyCompactList}\small\item\em Create a list which contains no list. \end{DoxyCompactList}\item 
+\hyperlink{classglpp_1_1list_a55814bd10129c619115f95bbebef7197}{list} (const \hyperlink{classglpp_1_1list}{list} \&)=delete
+\item 
+\hyperlink{classglpp_1_1list_ab5287a3d79b3ebb25da54a5f01d1edff}{list} (\hyperlink{classglpp_1_1list}{list} \&\&orig) noexcept
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\hyperlink{classglpp_1_1list_acae5cc28ee69a9cc37c6b812d60d09b2}{$\sim$list} () noexcept
+\begin{DoxyCompactList}\small\item\em Destroy the list. \end{DoxyCompactList}\item 
+\hyperlink{classglpp_1_1list}{list} \& \hyperlink{classglpp_1_1list_a2ae6b7f26d0fad6c358770fc7dd64389}{operator=} (const \hyperlink{classglpp_1_1list}{list} \&)=delete
+\item 
+\hyperlink{classglpp_1_1list}{list} \& \hyperlink{classglpp_1_1list_a74fbee0338eac4b1df84aedcefb0fc4d}{operator=} (\hyperlink{classglpp_1_1list}{list} \&\&orig) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename F $>$ }\\\hyperlink{classglpp_1_1list}{list} \hyperlink{classglpp_1_1list_a627197fd6510c899fb15354dae0ee58c}{create\+\_\+list} (\hyperlink{namespaceglpp_ae04b58b8004d97440233b5c65fe75748}{list\+\_\+mode}, F)
+\begin{DoxyCompactList}\small\item\em Create a list object. \end{DoxyCompactList}\item 
+void \hyperlink{classglpp_1_1list_acbdbed9fe36925d2ef6f6fe114a32d9d}{submit} (const \hyperlink{classglpp_1_1list}{list} \&) noexcept
+\begin{DoxyCompactList}\small\item\em Submit a call to a list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A wrapper class around an Open\+GL display list. 
+
+The list class is a wrapper around the Open\+GL list which manages lists as resources. 
+
+Definition at line 17 of file list.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglpp_1_1list_adf35376b2885cf8a455cf0611b6a6df2}\label{classglpp_1_1list_adf35376b2885cf8a455cf0611b6a6df2}} 
+\index{glpp\+::list@{glpp\+::list}!list@{list}}
+\index{list@{list}!glpp\+::list@{glpp\+::list}}
+\subsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily glpp\+::list\+::list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Create a list which contains no list. 
+
+
+
+Definition at line 11 of file list.\+cpp.
+
+\mbox{\Hypertarget{classglpp_1_1list_a55814bd10129c619115f95bbebef7197}\label{classglpp_1_1list_a55814bd10129c619115f95bbebef7197}} 
+\index{glpp\+::list@{glpp\+::list}!list@{list}}
+\index{list@{list}!glpp\+::list@{glpp\+::list}}
+\subsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily glpp\+::list\+::list (\begin{DoxyParamCaption}\item[{const \hyperlink{classglpp_1_1list}{list} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Deleted. \mbox{\Hypertarget{classglpp_1_1list_ab5287a3d79b3ebb25da54a5f01d1edff}\label{classglpp_1_1list_ab5287a3d79b3ebb25da54a5f01d1edff}} 
+\index{glpp\+::list@{glpp\+::list}!list@{list}}
+\index{list@{list}!glpp\+::list@{glpp\+::list}}
+\subsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily glpp\+::list\+::list (\begin{DoxyParamCaption}\item[{\hyperlink{classglpp_1_1list}{list} \&\&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move constructor. 
+
+Move the list of a temporary list into a list by taking the list of the temporary list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & The rvalue reference to the list to be moved. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file list.\+cpp.
+
+\mbox{\Hypertarget{classglpp_1_1list_acae5cc28ee69a9cc37c6b812d60d09b2}\label{classglpp_1_1list_acae5cc28ee69a9cc37c6b812d60d09b2}} 
+\index{glpp\+::list@{glpp\+::list}!````~list@{$\sim$list}}
+\index{````~list@{$\sim$list}!glpp\+::list@{glpp\+::list}}
+\subsubsection{\texorpdfstring{$\sim$list()}{~list()}}
+{\footnotesize\ttfamily glpp\+::list\+::$\sim$list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Destroy the list. 
+
+If no valid list is contained within list then nothing happens. 
+
+Definition at line 23 of file list.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglpp_1_1list_a2ae6b7f26d0fad6c358770fc7dd64389}\label{classglpp_1_1list_a2ae6b7f26d0fad6c358770fc7dd64389}} 
+\index{glpp\+::list@{glpp\+::list}!operator=@{operator=}}
+\index{operator=@{operator=}!glpp\+::list@{glpp\+::list}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classglpp_1_1list}{list}\& glpp\+::list\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classglpp_1_1list}{list} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Deleted. \mbox{\Hypertarget{classglpp_1_1list_a74fbee0338eac4b1df84aedcefb0fc4d}\label{classglpp_1_1list_a74fbee0338eac4b1df84aedcefb0fc4d}} 
+\index{glpp\+::list@{glpp\+::list}!operator=@{operator=}}
+\index{operator=@{operator=}!glpp\+::list@{glpp\+::list}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classglpp_1_1list}{list} \& glpp\+::list\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classglpp_1_1list}{list} \&\&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move assignment. 
+
+Move a list into this list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & The rvalue reference to the list object to be moved into this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reference to this object after the move. 
+\end{DoxyReturn}
+
+
+Definition at line 30 of file list.\+cpp.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classglpp_1_1list_a627197fd6510c899fb15354dae0ee58c}\label{classglpp_1_1list_a627197fd6510c899fb15354dae0ee58c}} 
+\index{glpp\+::list@{glpp\+::list}!create\+\_\+list@{create\+\_\+list}}
+\index{create\+\_\+list@{create\+\_\+list}!glpp\+::list@{glpp\+::list}}
+\subsubsection{\texorpdfstring{create\+\_\+list}{create\_list}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+\hyperlink{classglpp_1_1list}{list} create\+\_\+list (\begin{DoxyParamCaption}\item[{\hyperlink{namespaceglpp_ae04b58b8004d97440233b5c65fe75748}{list\+\_\+mode}}]{mode,  }\item[{F}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Create a list object. 
+
+Create a list object by calling a procedure containing the steps to creating the list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & The compilation mode. \\
+\hline
+{\em callback} & The procedure which contains the details of the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created list. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em error} & If Open\+GL raises an error. \\
+\hline
+{\em std\+::exception} & If the callback throws. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 141 of file list.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1list_acbdbed9fe36925d2ef6f6fe114a32d9d}\label{classglpp_1_1list_acbdbed9fe36925d2ef6f6fe114a32d9d}} 
+\index{glpp\+::list@{glpp\+::list}!submit@{submit}}
+\index{submit@{submit}!glpp\+::list@{glpp\+::list}}
+\subsubsection{\texorpdfstring{submit}{submit}}
+{\footnotesize\ttfamily void submit (\begin{DoxyParamCaption}\item[{const \hyperlink{classglpp_1_1list}{list} \&}]{li }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Submit a call to a list. 
+
+The result of this method is the equivalent of calling gl\+Call\+List(\+G\+Luint).
+
+
+\begin{DoxyParams}{Parameters}
+{\em li} & The list to be called. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 154 of file list.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Development/\+G\+I\+T/glpp/src/design/\hyperlink{list_8hpp}{list.\+hpp}\item 
+D\+:/\+Development/\+G\+I\+T/glpp/src/design/src/\hyperlink{list_8cpp}{list.\+cpp}\end{DoxyCompactItemize}

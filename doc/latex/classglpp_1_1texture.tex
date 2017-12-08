@@ -1,0 +1,222 @@
+\hypertarget{classglpp_1_1texture}{}\section{glpp\+:\+:texture Class Reference}
+\label{classglpp_1_1texture}\index{glpp\+::texture@{glpp\+::texture}}
+
+
+Encapsulation of textures which are used by Open\+GL.  
+
+
+
+
+{\ttfamily \#include $<$texture.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \hyperlink{classglpp_1_1texture_a185be01a6e7167e5fc8797df2fa927d3}{texture} () noexcept
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classglpp_1_1texture_ae064901a9618b1f58f160cb3f587b4ce}{texture} (\hyperlink{namespaceglpp_a09dd2630cf15f1c3f3b4164c59cc7d26}{texture\+\_\+mode} target)
+\begin{DoxyCompactList}\small\item\em Create a texture with a specific texture\+\_\+mode. \end{DoxyCompactList}\item 
+\hyperlink{classglpp_1_1texture_a8cd0e24fd6db7a32c0bd1ff5228fd2b7}{texture} (const \hyperlink{classglpp_1_1texture}{texture} \&)=delete
+\item 
+\hyperlink{classglpp_1_1texture_a4b45a7d9c58d84913ec37f416ef766b5}{texture} (\hyperlink{classglpp_1_1texture}{texture} \&\&orig)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\hyperlink{classglpp_1_1texture_a45a7e6426cde8199f0507c7618d2188e}{$\sim$texture} () noexcept
+\begin{DoxyCompactList}\small\item\em Delete the texture. \end{DoxyCompactList}\item 
+\hyperlink{classglpp_1_1texture}{texture} \hyperlink{classglpp_1_1texture_a4b57f18cf8ee0240acf75cd573ced480}{operator=} (const \hyperlink{classglpp_1_1texture}{texture} \&)=delete
+\item 
+\hyperlink{classglpp_1_1texture}{texture} \& \hyperlink{classglpp_1_1texture_a459d035c1f00aa3e83ed381515779b4a}{operator=} (\hyperlink{classglpp_1_1texture}{texture} \&\&orig) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename F $>$ }\\\hyperlink{classglpp_1_1texture}{texture} \hyperlink{classglpp_1_1texture_adaa62c117269049a04e9ce958c0d9856}{load\+\_\+texture} (const std\+::string \&, \hyperlink{namespaceglpp_a09dd2630cf15f1c3f3b4164c59cc7d26}{texture\+\_\+mode}, F load\+\_\+strategy) noexcept(noexcept(load\+\_\+strategy(\char`\"{}\char`\"{}, 0, 0)))
+\begin{DoxyCompactList}\small\item\em Load a texture into a texture object. \end{DoxyCompactList}\item 
+void \hyperlink{classglpp_1_1texture_ac40bc6b16cee4dbf15c0562ce550da18}{submit} (const \hyperlink{classglpp_1_1texture}{texture} \&)
+\begin{DoxyCompactList}\small\item\em Bind the texture for drawing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Encapsulation of textures which are used by Open\+GL. 
+
+A texture object contains both the texture\+\_\+mode and the id which identifies the texture. A texture may be moved but not copied. 
+
+Definition at line 20 of file texture.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglpp_1_1texture_a185be01a6e7167e5fc8797df2fa927d3}\label{classglpp_1_1texture_a185be01a6e7167e5fc8797df2fa927d3}} 
+\index{glpp\+::texture@{glpp\+::texture}!texture@{texture}}
+\index{texture@{texture}!glpp\+::texture@{glpp\+::texture}}
+\subsubsection{\texorpdfstring{texture()}{texture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily constexpr glpp\+::texture\+::texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+The default constructor. 
+
+The texture constructed will be G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2D and invalid. 
+
+Definition at line 65 of file texture.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1texture_ae064901a9618b1f58f160cb3f587b4ce}\label{classglpp_1_1texture_ae064901a9618b1f58f160cb3f587b4ce}} 
+\index{glpp\+::texture@{glpp\+::texture}!texture@{texture}}
+\index{texture@{texture}!glpp\+::texture@{glpp\+::texture}}
+\subsubsection{\texorpdfstring{texture()}{texture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily glpp\+::texture\+::texture (\begin{DoxyParamCaption}\item[{\hyperlink{namespaceglpp_a09dd2630cf15f1c3f3b4164c59cc7d26}{texture\+\_\+mode}}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a texture with a specific texture\+\_\+mode. 
+
+Constructing a texture will generate a texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The texture\+\_\+mode which will be used in this texture. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em error} & If generating a texture fails. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 77 of file texture.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1texture_a8cd0e24fd6db7a32c0bd1ff5228fd2b7}\label{classglpp_1_1texture_a8cd0e24fd6db7a32c0bd1ff5228fd2b7}} 
+\index{glpp\+::texture@{glpp\+::texture}!texture@{texture}}
+\index{texture@{texture}!glpp\+::texture@{glpp\+::texture}}
+\subsubsection{\texorpdfstring{texture()}{texture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily glpp\+::texture\+::texture (\begin{DoxyParamCaption}\item[{const \hyperlink{classglpp_1_1texture}{texture} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Deleted. \mbox{\Hypertarget{classglpp_1_1texture_a4b45a7d9c58d84913ec37f416ef766b5}\label{classglpp_1_1texture_a4b45a7d9c58d84913ec37f416ef766b5}} 
+\index{glpp\+::texture@{glpp\+::texture}!texture@{texture}}
+\index{texture@{texture}!glpp\+::texture@{glpp\+::texture}}
+\subsubsection{\texorpdfstring{texture()}{texture()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily glpp\+::texture\+::texture (\begin{DoxyParamCaption}\item[{\hyperlink{classglpp_1_1texture}{texture} \&\&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Move constructor. 
+
+Move a texture into a newly constructed texture by copying the texture\+\_\+mode and texture id of the original texture, then setting the original texture to contain no list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & rvalue reference to the texture to be moved \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file texture.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1texture_a45a7e6426cde8199f0507c7618d2188e}\label{classglpp_1_1texture_a45a7e6426cde8199f0507c7618d2188e}} 
+\index{glpp\+::texture@{glpp\+::texture}!````~texture@{$\sim$texture}}
+\index{````~texture@{$\sim$texture}!glpp\+::texture@{glpp\+::texture}}
+\subsubsection{\texorpdfstring{$\sim$texture()}{~texture()}}
+{\footnotesize\ttfamily glpp\+::texture\+::$\sim$texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Delete the texture. 
+
+Destroy the texture and free the resource. 
+
+Definition at line 11 of file texture.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classglpp_1_1texture_a4b57f18cf8ee0240acf75cd573ced480}\label{classglpp_1_1texture_a4b57f18cf8ee0240acf75cd573ced480}} 
+\index{glpp\+::texture@{glpp\+::texture}!operator=@{operator=}}
+\index{operator=@{operator=}!glpp\+::texture@{glpp\+::texture}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classglpp_1_1texture}{texture} glpp\+::texture\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classglpp_1_1texture}{texture} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Deleted. \mbox{\Hypertarget{classglpp_1_1texture_a459d035c1f00aa3e83ed381515779b4a}\label{classglpp_1_1texture_a459d035c1f00aa3e83ed381515779b4a}} 
+\index{glpp\+::texture@{glpp\+::texture}!operator=@{operator=}}
+\index{operator=@{operator=}!glpp\+::texture@{glpp\+::texture}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classglpp_1_1texture}{texture} \& glpp\+::texture\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classglpp_1_1texture}{texture} \&\&}]{orig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Move assignment. 
+
+Before moving the original texture into this, first the resources in this texture will be released, then the texture\+\_\+mode and id from the original texture will be copied, then the texture id of the original will be set to contain no texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & The rvalue reference to the texture to move into this texture. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file texture.\+cpp.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classglpp_1_1texture_adaa62c117269049a04e9ce958c0d9856}\label{classglpp_1_1texture_adaa62c117269049a04e9ce958c0d9856}} 
+\index{glpp\+::texture@{glpp\+::texture}!load\+\_\+texture@{load\+\_\+texture}}
+\index{load\+\_\+texture@{load\+\_\+texture}!glpp\+::texture@{glpp\+::texture}}
+\subsubsection{\texorpdfstring{load\+\_\+texture}{load\_texture}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+\hyperlink{classglpp_1_1texture}{texture} load\+\_\+texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{\hyperlink{namespaceglpp_a09dd2630cf15f1c3f3b4164c59cc7d26}{texture\+\_\+mode}}]{target,  }\item[{F}]{load\+\_\+strategy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Load a texture into a texture object. 
+
+A callback must be provided to help the set up of the texture.
+
+If the {\ttfamily load\+\_\+strategy} may throw, then this function may also throw; however, if {\ttfamily load\+\_\+strategy} may not throw, then neither will this function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The reference to a string representing the name of the file to be loaded. \\
+\hline
+{\em target} & The type of texture to be loaded. \\
+\hline
+{\em A} & function which defines the strategy of loading the textures. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A texture object representing the loaded texture. 
+\end{DoxyReturn}
+
+
+Definition at line 159 of file texture.\+hpp.
+
+\mbox{\Hypertarget{classglpp_1_1texture_ac40bc6b16cee4dbf15c0562ce550da18}\label{classglpp_1_1texture_ac40bc6b16cee4dbf15c0562ce550da18}} 
+\index{glpp\+::texture@{glpp\+::texture}!submit@{submit}}
+\index{submit@{submit}!glpp\+::texture@{glpp\+::texture}}
+\subsubsection{\texorpdfstring{submit}{submit}}
+{\footnotesize\ttfamily void submit (\begin{DoxyParamCaption}\item[{const \hyperlink{classglpp_1_1texture}{texture} \&}]{tex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Bind the texture for drawing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tex} & The reference to the texture to bind for drawing. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & If {\ttfamily tex} is an invalid texture. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 174 of file texture.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Development/\+G\+I\+T/glpp/src/visual/\hyperlink{texture_8hpp}{texture.\+hpp}\item 
+D\+:/\+Development/\+G\+I\+T/glpp/src/visual/src/\hyperlink{texture_8cpp}{texture.\+cpp}\end{DoxyCompactItemize}

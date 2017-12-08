@@ -1,5 +1,5 @@
-#ifndef LIGHT_HPP
-#define LIGHT_HPP
+#ifndef GLPP_SRC_VISUAL_LIGHT_HPP
+#define GLPP_SRC_VISUAL_LIGHT_HPP
 
 #include <GL/gl.h>
 #include "../util.hpp"
@@ -76,4 +76,4 @@ namespace glpp
             const float_vector4&& v);
 } //glpp
 
-#endif //LIGHT_HPP
+#endif //GLPP_SRC_VISUAL_LIGHT_HPP

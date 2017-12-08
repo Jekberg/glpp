@@ -1,11 +1,5 @@
-/*
- * File:    error.hpp
- * Author:  John Berg
- * Date:    28/10/2017
- */
-
-#ifndef ERROR_HPP
-#define ERROR_HPP
+#ifndef GLPP_SRC_UTIL_ERROR_HPP
+#define GLPP_SRC_UTIL_ERROR_HPP
 
 #include <exception>
 #include <GL/gl.h>
@@ -110,4 +104,4 @@ namespace glpp
     void get_error();
 } //glpp
 
-#endif //ERROR_HPP
+#endif //GLPP_SRC_UTIL_ERROR_HPP
